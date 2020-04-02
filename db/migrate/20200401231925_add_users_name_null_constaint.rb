@@ -1,9 +1,5 @@
 class AddUsersNameNullConstaint < ActiveRecord::Migration[6.0]
-  def up
+  def change
     change_column_null(:users, :name, false)
-  end
-
-  def down
-    change_column_null(:users, :name, true)
   end
 end

@@ -1,9 +1,5 @@
 class AddQuestionsBodyNullConstaint < ActiveRecord::Migration[6.0]
-  def up
+  def change
     change_column_null(:questions, :body, false)
-  end
-
-  def down
-    change_column_null(:questions, :body, true)
   end
 end
