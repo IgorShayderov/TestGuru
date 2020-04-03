@@ -22,8 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * Список сущностей:
-  - Тест
-  - Пользователь
-  - Вопрос
-  - Ответ
-  - Результат
+  - Test
+  - User
+  - Question
+  - Answer
+  - Category
