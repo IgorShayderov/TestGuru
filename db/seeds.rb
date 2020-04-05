@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 def row_id_by_attr_value(table, attr, value)
-  table.select { |table_row| table_row[attr] == value }.first.id
+  table.find { |table_row| table_row[attr] == value }.id
 end
 
 users = User.create!([
