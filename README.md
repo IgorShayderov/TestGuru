@@ -27,3 +27,4 @@ Things you may want to cover:
   - Question
   - Answer
   - Category
+  - UserTest
