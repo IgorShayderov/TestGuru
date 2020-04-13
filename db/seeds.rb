@@ -70,7 +70,7 @@ Answer.create!([
 vanya = row_id_by_attr_value(users, :name, "Vanya")
 petya = row_id_by_attr_value(users, :name, "Petya")
 
-UserTest.create!([
+TestsUser.create!([
   {result: "In process", user_id: vanya, test_id: html_test_id},
   {result: "Failed", user_id: vanya, test_id: js_test_id},
   {result: "Passed", user_id: vanya, test_id: react_test_id}
