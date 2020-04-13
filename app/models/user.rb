@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :tests, through: :tests_users, dependent: :destroy
 
   def tests_by_level(level)
-      created_tests
+      tests_users
       .where(level: level)
   end
 
