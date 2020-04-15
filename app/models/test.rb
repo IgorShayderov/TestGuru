@@ -1,5 +1,7 @@
 class Test < ApplicationRecord
 
+  after_initialize :set_defaults, unless: :persisted?
+
   belongs_to :author, class_name: 'User', foreign_key: 'user_id'
   belongs_to :category
   has_many :tests_users
@@ -10,10 +12,19 @@ class Test < ApplicationRecord
   scope :middle, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
 
-  scope :test_names_by_category_title, -> (category_title) { joins(:category).where(categories: { title: category_title }).order(title: :desc).pluck(:title) }
+  scope :tests_by_category_title, -> (category_title) { joins(:category).where(categories: { title: category_title }).order(title: :desc) }
 
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level }
+
+  def self.test_names_by_category_title(category_title)
+      tests_by_category_title(category_title)
+      .pluck(:title)
+  end
+
+  def set_defaults
+    self.user_id ||= User.first.id
+  end
 
 end
