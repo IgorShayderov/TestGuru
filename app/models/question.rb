@@ -4,11 +4,6 @@ class Question < ApplicationRecord
   has_many :answers, dependent: :destroy
 
   validates :body, presence: true
-  validates :answers, length: { minimum: 1, maximum: 4 }
-  validate :validate_tags
-
-  def validate_tags
-    errors.add(:answers, "too much") if answers.size > 4
-  end
+  validates :answers, length: { minimum: 1, maximum: 4 }, on: :create
 
 end
