@@ -11,6 +11,7 @@ def row_id_by_attr_value(table, attr, value)
 end
 
 users = User.create!([
+  {name: "SuperAdmin"},
   {name: "Vanya"},
   {name: "Petya"}
 ])
@@ -23,21 +24,23 @@ categories = Category.create!([
 
 programming_id = row_id_by_attr_value(categories, :title, "Programming")
 history_id = row_id_by_attr_value(categories, :title, "History")
-cities_id = row_id_by_attr_value(categories, :title, "Geography")
+geography_id = row_id_by_attr_value(categories, :title, "Geography")
 
 tests = Test.create!([
   {title: "HTML", category_id: programming_id},
   {title: "Javascript", category_id: programming_id, level: 1},
   {title: "React", category_id: programming_id, level: 2},
   {title: "Ancient Rome", category_id: history_id, level: 1},
-  {title: "Cities", category_id: cities_id, level: 1}
+  {title: "Cities", category_id: geography_id, level: 1},
+  {title: "Ruby on Rails", category_id: programming_id, level: 4},
+  {title: "Ancient Architecture", category_id: history_id, level: 6}
 ])
 
 html_test_id = row_id_by_attr_value(tests, :title, "HTML")
 js_test_id = row_id_by_attr_value(tests, :title, "Javascript")
 react_test_id = row_id_by_attr_value(tests, :title, "React")
 ancient_rome_test_id = row_id_by_attr_value(tests, :title, "Ancient Rome")
-cities_id = row_id_by_attr_value(tests, :title, "Cities")
+geography_id = row_id_by_attr_value(tests, :title, "Cities")
 
 html_means_q_body = "What does 'HTML' means?"
 rome_caezar_q_body = "What is the name of the most famous Rome commander who has been brutally killed?"
@@ -47,8 +50,8 @@ kgd_uniq_q_body = "What is the main uniqueness of Kaliningrad?"
 questions = Question.create!([
   {body: html_means_q_body, test_id: html_test_id},
   {body: rome_caezar_q_body, test_id: ancient_rome_test_id},
-  {body: kgd_rf_subj_q_body, test_id: cities_id},
-  {body: kgd_uniq_q_body, test_id: cities_id}
+  {body: kgd_rf_subj_q_body, test_id: geography_id},
+  {body: kgd_uniq_q_body, test_id: geography_id}
 ])
 
 html_means_q_id = row_id_by_attr_value(questions, :body, html_means_q_body)
