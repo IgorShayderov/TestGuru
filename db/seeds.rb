@@ -40,7 +40,7 @@ html_test_id = row_id_by_attr_value(tests, :title, "HTML")
 js_test_id = row_id_by_attr_value(tests, :title, "Javascript")
 react_test_id = row_id_by_attr_value(tests, :title, "React")
 ancient_rome_test_id = row_id_by_attr_value(tests, :title, "Ancient Rome")
-geography_id = row_id_by_attr_value(tests, :title, "Cities")
+cities_test_id = row_id_by_attr_value(tests, :title, "Cities")
 
 html_means_q_body = "What does 'HTML' means?"
 rome_caezar_q_body = "What is the name of the most famous Rome commander who has been brutally killed?"
@@ -50,8 +50,8 @@ kgd_uniq_q_body = "What is the main uniqueness of Kaliningrad?"
 questions = Question.create!([
   {body: html_means_q_body, test_id: html_test_id},
   {body: rome_caezar_q_body, test_id: ancient_rome_test_id},
-  {body: kgd_rf_subj_q_body, test_id: geography_id},
-  {body: kgd_uniq_q_body, test_id: geography_id}
+  {body: kgd_rf_subj_q_body, test_id: cities_test_id},
+  {body: kgd_uniq_q_body, test_id: cities_test_id}
 ])
 
 html_means_q_id = row_id_by_attr_value(questions, :body, html_means_q_body)
