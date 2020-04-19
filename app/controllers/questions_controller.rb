@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
 
   before_action :find_test, only: %i[index, create]
 
-  rescue_from ActiveRecord::RecordNotFound, with: : rescue_with_question_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
     result = @test.questions.pluck(:body).join("<br>")
@@ -26,8 +26,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    puts params
-    question @test.questions.destroy(params[:id])
+    question Question.destroy(params[:id])
 
     render html: "#{question} has been deleted"
   end
