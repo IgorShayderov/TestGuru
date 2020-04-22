@@ -2,8 +2,8 @@
 
   <%= render 'shared/errors', resource: @question  %>
 
-  <%= form.label :body, class: "new-question__item" %>
-  <%= form.text_area :body, id: :question_body, class: "new-question__item", cols: 40 %>
+  <%= form.label :body, class: "form-question__item" %>
+  <%= form.text_area :body, id: :question_body, class: "form-question__item", cols: 40 %>
 
-  <%= form.submit class: "new-question__submit" %>
+  <%= form.submit class: "form-question__submit" %>
 <% end %>
