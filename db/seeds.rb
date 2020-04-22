@@ -19,7 +19,7 @@ users = User.create!([
 categories = Category.create!([
   {title: "Programming"},
   {title: "History"},
-  {title: "Geography"}
+  {title: "Geography"},
 ])
 
 programming_id = row_id_by_attr_value(categories, :title, "Programming")
@@ -33,7 +33,9 @@ tests = Test.create!([
   {title: "Ancient Rome", category_id: history_id, level: 1},
   {title: "Cities", category_id: geography_id, level: 1},
   {title: "Ruby on Rails", category_id: programming_id, level: 4},
-  {title: "Ancient Architecture", category_id: history_id, level: 6}
+  {title: "Ancient Architecture", category_id: history_id, level: 6},
+  {title: "Vue.js", category_id: programming_id, level: 3},
+  {title: "Countries", category_id: geography_id, level: 2},
 ])
 
 html_test_id = row_id_by_attr_value(tests, :title, "HTML")
@@ -41,23 +43,27 @@ js_test_id = row_id_by_attr_value(tests, :title, "Javascript")
 react_test_id = row_id_by_attr_value(tests, :title, "React")
 ancient_rome_test_id = row_id_by_attr_value(tests, :title, "Ancient Rome")
 cities_test_id = row_id_by_attr_value(tests, :title, "Cities")
+countries_test_id = row_id_by_attr_value(tests, :title, "Countries")
 
 html_means_q_body = "What does 'HTML' means?"
 rome_caezar_q_body = "What is the name of the most famous Rome commander who has been brutally killed?"
 kgd_rf_subj_q_body = "Main city in the most north-west subject of Russian Federation."
 kgd_uniq_q_body = "What is the main uniqueness of Kaliningrad?"
+countries_cnt_q_body = "How many countries are in the world?"
 
 questions = Question.create!([
   {body: html_means_q_body, test_id: html_test_id},
   {body: rome_caezar_q_body, test_id: ancient_rome_test_id},
   {body: kgd_rf_subj_q_body, test_id: cities_test_id},
-  {body: kgd_uniq_q_body, test_id: cities_test_id}
+  {body: kgd_uniq_q_body, test_id: cities_test_id},
+  {body: countries_cnt_q_body, test_id: countries_test_id},
 ])
 
 html_means_q_id = row_id_by_attr_value(questions, :body, html_means_q_body)
 rome_caezar_q_id = row_id_by_attr_value(questions, :body, rome_caezar_q_body)
 kgd_rf_subj_q_id = row_id_by_attr_value(questions, :body, kgd_rf_subj_q_body)
 kgd_uniq_q_id = row_id_by_attr_value(questions, :body, kgd_uniq_q_body)
+countries_cnt_q_id = row_id_by_attr_value(questions, :body, countries_cnt_q_body)
 
 Answer.create!([
   {body: "Hyper Text Markup Language", question_id: html_means_q_id, correct: true},
@@ -67,7 +73,11 @@ Answer.create!([
   {body: "Kaliningrad", question_id: kgd_rf_subj_q_id, correct: true},
   {body: "Berlin", question_id: kgd_rf_subj_q_id, correct: false},
   {body: "Amber", question_id: kgd_uniq_q_id, correct: true},
-  {body: "Curonian Spit", question_id: kgd_uniq_q_id, correct: false}
+  {body: "Curonian Spit", question_id: kgd_uniq_q_id, correct: false},
+  {body: "195", question_id: countries_cnt_q_id, correct: true},
+  {body: "211", question_id: countries_cnt_q_id, correct: false},
+  {body: "145", question_id: countries_cnt_q_id, correct: false},
+  {body: "543", question_id: countries_cnt_q_id, correct: false},
 ])
 
 vanya = row_id_by_attr_value(users, :name, "Vanya")
