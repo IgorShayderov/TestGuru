@@ -13,6 +13,6 @@ module TestPassagesHelper
   def test_passed?(test_passsage)
     success_percent = calc_success_percent(test_passsage)
 
-    success_percent < PERCENT_TO_PASS ? false : true
+    success_percent >= PERCENT_TO_PASS
   end
 end
