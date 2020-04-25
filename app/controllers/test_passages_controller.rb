@@ -7,9 +7,7 @@ class TestPassagesController < ApplicationController
   def result; end
 
   def update
-    p "???"
-    p params
-    @test_passage.accept!(params[:answers_ids])
+    @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
       redirect_to result_test_passage_path(@test_passage)
