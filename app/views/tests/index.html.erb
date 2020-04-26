@@ -1,13 +1,13 @@
-<h2 class="header">All tests</h2>
+<h2 class="text-center">All tests</h2>
 
-<table class="table">
+<table class="table table-striped">
   <thead class="thead-dark">
     <tr>
       <th>Test id:</th>
       <th>Title:</th>
       <th>Level</th>
       <th>Questions:</th>
-      <th colspan="4">Actions:</th>
+      <th colspan="4" class="text-center">Actions:</th>
     </tr>
   </thead>
   <tbody>
@@ -15,5 +15,5 @@
   </tbody>
 </table>
 
-<%= link_to 'New test', new_test_path %>
+<%= link_to 'New test', new_test_path, class: "btn btn-success" %>
 

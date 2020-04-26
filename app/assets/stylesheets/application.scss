@@ -31,3 +31,12 @@ main {
   list-style: none;
   text-align: right;
 }
+.form__item {
+  display: block;
+  line-height: 2;
+}
+
+.form__submit {
+  margin-top: 10px;
+  border-radius: 10px;
+}
