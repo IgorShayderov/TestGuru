@@ -1,4 +1,4 @@
-<p>Test id: <%= @test.id %></p>
+<h3>Test id: <%= @test.id %></h3>
 
 <ul>
     <li>Title: <%= @test.title %></li>
@@ -6,15 +6,15 @@
     <li>Level: <%= @test.level %></li>
 </ul>
 
-<table>
+<table class="table table-striped">
   <tr>
     <th>Question id:</th>
     <th>Body:</th>
     <th>Answers:</th>
-    <th colspan="3">Actions:</th>
+    <th colspan="3" class="text-center">Actions:</th>
   </tr>
   <%= render @test.questions %>
 </table>
 
-<%= link_to 'Back', tests_path %>
-<%= link_to 'New question', new_test_question_path(@test) %>
+<%= link_to 'Back', tests_path, class: "btn btn-secondary" %>
+<%= link_to 'New question', new_test_question_path(@test), class: "btn btn-success" %>
