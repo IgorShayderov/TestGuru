@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+
 html {
   height: 100%;
 }
@@ -25,7 +27,19 @@ body {
 main {
   flex-grow: 1;
 }
+.form-test__item {
+  display: block;
+}
 .author-info__item {
   list-style: none;
   text-align: right;
+}
+.form__item {
+  display: block;
+  line-height: 2;
+}
+
+.form__submit {
+  margin-top: 10px;
+  border-radius: 10px;
 }
