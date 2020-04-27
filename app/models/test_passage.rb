@@ -31,9 +31,7 @@ class TestPassage < ApplicationRecord
   end
 
   def test_passed?
-    success_percent = calc_success_percent
-
-    success_percent >= PERCENT_TO_PASS
+    calc_success_percent >= PERCENT_TO_PASS
   end
 
   private
