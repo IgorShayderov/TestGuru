@@ -1,12 +1,12 @@
 <h2>Test <%= @test_passage.test.title %> has been completed</h2>
 
-<div class="test-completion">
+<div>
   <p><%= @test_passage.calc_success_percent %>% of completion.</p>
 
   <% if @test_passage.test_passed? %>
-    <p class="test-completion__item_success"> Test passed </p>
+    <p class="text-success"> Test passed </p>
   <% else %>
-    <p class="test-completion__item_fail"> Test failed </p>
+    <p class="text-danger"> Test failed </p>
   <% end %>
 
 <%= link_to 'Back', tests_path(@test_passage.test) %>

@@ -23,11 +23,7 @@ class TestPassage < ApplicationRecord
 
 
   def calc_success_percent
-    total = self.test.questions.count
-    passed = self.correct_questions
-    relation = passed.to_f / total.to_f
-
-    (relation * 100).to_i
+    (( self.correct_questions.to_f / self.test.questions.count.to_f) * 100).to_i
   end
 
   def test_passed?
@@ -45,7 +41,6 @@ class TestPassage < ApplicationRecord
       test.questions.order(:id).where('id > ?', current_question.id).first :
       test.questions.first
   end
-
 
   def correct_answer?(answer_ids)
     correct_answers_count = correct_answers.count
