@@ -1,0 +1,17 @@
+<%= form_with url: sessions_path, local: true do |form| %>
+  <% if flash[:alert] %>
+    <%= content_tag :p, flash[:alert], class: 'alert alert-danger' %>
+  <% end %>
+
+  <p>
+    <%= form.label :email, class: 'form__item' %>
+    <%= form.text_field :email, id: :email %>
+  </p>
+
+  <p>
+    <%= form.label :password, class: 'form__item' %>
+    <%= form.text_field :password, id: :password %>
+  </p>
+
+  <p><%= form.submit 'Enter', class: 'btn btn-primary' %></p>
+<% end %>

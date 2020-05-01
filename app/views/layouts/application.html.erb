@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <p class="nav user">Welcome, <b><% current_user.email %></b></p>
+    <% end %>
+
     <main>
       <%= yield %>
     </main>
