@@ -6,18 +6,22 @@ module User::Auth
   attr_writer :password_confirmation
 
   included do
-    validates :email, presence: true
+    validates :email, presence: true, format: { with: /[a-zA-Z1-9._-]+@\w+\.\w{2,3}/}, uniqueness: true
     validates :password, presence: true, if: Proc.new { |u| u.password_digest.blank? }
     validates :password, confirmation: true
   end
 
-  def authenthicate(password_string)
+  def authenticate(password_string)
     digest(password_string) == self.password_digest ? self : false
   end
 
   def password=(password_string)
-    @password = password_string
-    self.password_digest = digest(password_string)
+    if password_string.nil?
+      self.password_digest = nil
+    elsif password_string.present?
+      @password = password_string
+      self.password_digest = digest(password_string)
+    end
   end
 
   private

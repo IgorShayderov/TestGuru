@@ -1,9 +1,10 @@
 class TestPassagesController < ApplicationController
 
+  before_action :authenticate_user!
   before_action :set_test_passage, only: %i[show result update]
 
   def show
-    if @test_passage.has_attribute?(:questions)
+    if @test_passage.test.questions.count > 0
       render :show
     else
       render plain: "There are no questions."
