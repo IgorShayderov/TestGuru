@@ -11,9 +11,7 @@ def row_id_by_attr_value(table, attr, value)
 end
 
 users = User.create!([
-  {name: "SuperAdmin"},
-  {name: "Vanya"},
-  {name: "Petya"}
+  {name: "SuperAdmin", email: "super-admin@gmail.com", password_digest: "5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8"},
 ])
 
 categories = Category.create!([
@@ -78,13 +76,4 @@ Answer.create!([
   {body: "211", question_id: countries_cnt_q_id, correct: false},
   {body: "145", question_id: countries_cnt_q_id, correct: false},
   {body: "543", question_id: countries_cnt_q_id, correct: false},
-])
-
-vanya = row_id_by_attr_value(users, :name, "Vanya")
-petya = row_id_by_attr_value(users, :name, "Petya")
-
-TestsUser.create!([
-  {result: "In process", user_id: vanya, test_id: html_test_id},
-  {result: "Failed", user_id: vanya, test_id: js_test_id},
-  {result: "Passed", user_id: vanya, test_id: react_test_id}
 ])

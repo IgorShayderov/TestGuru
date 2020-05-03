@@ -1,5 +1,5 @@
 <% if resource.errors.present? %>
-  <div>
+  <div class="alert alert-danger">
     <h3><%= pluralize(resource.errors.count, 'error') %> detected:</h3>
 
     <ul>

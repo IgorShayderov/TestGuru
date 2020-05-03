@@ -1,0 +1,18 @@
+<%= form_with model: @user, local: true do |form| %>
+
+  <%= render 'shared/errors', resource: @user %>
+
+  <%= form.label :name, class: "form__item" %>
+  <%= form.text_field :name, id: :user_name %>
+
+  <%= form.label :email, class: "form__item" %>
+  <%= form.text_field :email, id: :user_email %>
+
+  <%= form.label :password, class: "form__item" %>
+  <%= form.password_field :password, id: :user_password %>
+
+  <%= form.label :password_confirmation, class: "form__item" %>
+  <%= form.password_field :password_confirmation, id: :user_password_confirmation, class: "form__item" %>
+  <br>
+  <%= form.submit class: "btn btn-primary" %>
+<% end %>
