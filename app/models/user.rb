@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :created_tests, class_name: 'Test', inverse_of: 'author', foreign_key: 'user_id'
+  has_many :test_passages
+  has_many :tests, through: :test_passages, dependent: :destroy
 
   devise :database_authenticatable,
          :registerable,
@@ -7,10 +10,6 @@ class User < ApplicationRecord
          :trackable,
          :validatable,
          :confirmable
-
-  has_many :created_tests, class_name: 'Test', inverse_of: 'author', foreign_key: 'user_id'
-  has_many :test_passages
-  has_many :tests, through: :test_passages, dependent: :destroy
 
   def tests_by_level(level)
     tests_users
@@ -21,4 +20,9 @@ class User < ApplicationRecord
     test_passages.order(id: :desc).find_by(test: test)
   end
 
+  def user_name
+    current_user.first_name.present? ?
+      current_user.first_name :
+      'please, specify your first name'
+  end
 end

@@ -22,6 +22,8 @@ gem 'bootstrap'
 
 gem 'pg'
 
+gem 'rspec'
+
 gem 'devise', '~> 4.0'
 
 # Use Redis adapter to run Action Cable in production

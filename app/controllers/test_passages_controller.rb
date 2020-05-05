@@ -1,13 +1,14 @@
-class TestPassagesController < ApplicationController
+# frozen_string_literal: true
 
+class TestPassagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_test_passage, only: %i[show result update]
 
   def show
-    if @test_passage.test.questions.count > 0
+    if @test_passage.test.questions.count.positive?
       render :show
     else
-      render plain: "There are no questions."
+      render plain: 'There are no questions.'
     end
   end
 
@@ -29,5 +30,4 @@ class TestPassagesController < ApplicationController
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
   end
-
 end

@@ -1,5 +1,6 @@
-class Admin::TestsController < Admin::BaseController
+# frozen_string_literal: true
 
+class Admin::TestsController < Admin::BaseController
   before_action :set_test, only: %i[show edit update destroy start]
 
   def index
@@ -15,8 +16,7 @@ class Admin::TestsController < Admin::BaseController
   def edit; end
 
   def create
-    @test = Test.new(test_params)
-    @test.author = current_user.id
+    @test = current_user.tests.new(test_params)
 
     if @test.save
       redirect_to @test
@@ -39,12 +39,6 @@ class Admin::TestsController < Admin::BaseController
     redirect_to tests_url
   end
 
-  def start
-    current_user.tests.push(@test)
-
-    redirect_to current_user.test_passage(@test)
-  end
-
   private
 
   def set_test
@@ -52,7 +46,6 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id, :author_id)
+    params.require(:test).permit(:title, :level, :category_id)
   end
-
 end
