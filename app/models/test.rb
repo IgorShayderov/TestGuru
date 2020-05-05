@@ -2,7 +2,7 @@ class Test < ApplicationRecord
 
   # after_initialize :set_defaults, unless: :persisted?
 
-  # belongs_to :author, class_name: 'User', foreign_key: 'user_id'
+  belongs_to :author, class_name: 'User', foreign_key: 'user_id'
   belongs_to :category
   has_many :test_passages
   has_many :users, through: :test_passages, dependent: :destroy
