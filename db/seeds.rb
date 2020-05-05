@@ -10,9 +10,14 @@ def row_id_by_attr_value(table, attr, value)
   table.find { |table_row| table_row[attr] == value }.id
 end
 
-# users = User.create!([
-#   {name: "SuperAdmin", email: "super-admin@gmail.com"},
-# ])
+admin = Admin.create!([
+  {
+    email: "super-admin@gmail.com",
+    first_name: "Igor",
+    last_name: "Shayderov",
+    password: "Warcraft3",
+  },
+])
 
 categories = Category.create!([
   {title: "Programming"},
