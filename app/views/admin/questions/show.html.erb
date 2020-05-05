@@ -9,5 +9,5 @@
 </ol>
 
 
-<%= link_to 'Edit', admin_edit_question_path, class: "btn btn-warning" %>
-<%= link_to 'Back', @question.test, class: "btn btn-secondary" %>
+<%= link_to 'Edit', edit_admin_question_path, class: "btn btn-warning" %>
+<%= link_to 'Back', admin_tests_path(@question.test), class: "btn btn-secondary" %>
