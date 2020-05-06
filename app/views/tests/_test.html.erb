@@ -3,12 +3,5 @@
   <td><%= test.title %></td>
   <td><%= test_level(test) %></td>
   <td class="text-center"><%= test.questions.count %></td>
-  <td ><%= link_to 'Show', test_path(test), class: "badge badge-info" %></td>
-  <td><%= link_to 'Edit', edit_test_path(test), class: "badge badge-warning" %></td>
-  <td><%= button_to 'Start', start_test_path(test), class: "btn btn-primary btn-sm" %></td>
-  <td><%= link_to 'Delete',
-                  test_path(test),
-                  method: :delete,
-                  data:  { confirm: 'Are you sure?' },
-                  class: "badge badge-danger" %></td>
+  <td class="text-center"><%= button_to 'Start', start_test_path(test), class: "btn btn-primary btn-sm" %></td>
 </tr>

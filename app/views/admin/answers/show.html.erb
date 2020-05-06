@@ -1,0 +1,11 @@
+<h3>Question</h3>
+
+<%= @answer.question.body %>
+
+<h4>Answer:</h4>
+<p><%= @answer.body %></p>
+
+<h4>Correct:</h4>
+<p><%= @answer.correct %></p>
+
+<%= link_to 'Back', admin_question_path(@answer.question), class: "btn btn-secondary"  %>

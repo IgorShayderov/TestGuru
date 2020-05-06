@@ -1,4 +1,4 @@
-<h1 class="text-center">All tests</h1>
+<h1 class="text-center"><%= t('tests.index.header') %></h1>
 
 <table class="table table-striped">
   <thead class="thead-dark">
@@ -7,13 +7,10 @@
       <th>Title:</th>
       <th>Level:</th>
       <th class="text-center">Questions:</th>
-      <th colspan="4" class="text-center">Actions:</th>
+      <th class="text-center">Actions:</th>
     </tr>
   </thead>
   <tbody>
     <%= render @tests %>
   </tbody>
 </table>
-
-<%= link_to 'New test', new_test_path, class: "btn btn-success" %>
-
