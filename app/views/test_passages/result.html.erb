@@ -1,4 +1,4 @@
-<h2>Test <%= @test_passage.test.title %> has been completed</h2>
+<h2><%= t('.header', title: @test_passage.test.title) %></h2>
 
 <div>
   <p><%= @test_passage.calc_success_percent %>% of completion.</p>
