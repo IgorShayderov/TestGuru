@@ -20,9 +20,9 @@ class User < ApplicationRecord
     test_passages.order(id: :desc).find_by(test: test)
   end
 
-  def user_name
-    current_user.first_name.present? ?
-      current_user.first_name :
+  def name
+    first_name.present? ?
+      first_name :
       'please, specify your first name'
   end
 end
