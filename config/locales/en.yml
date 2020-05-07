@@ -43,19 +43,14 @@ en:
   question: "question"
   answer: "answer"
   correct: "correct"
+  not_authorized: 'You are not authorized to view this page.'
+  say_hello: "Hello, %{name}"
 
   easy: "easy"
   elementary: "elementary"
   advanced: "advanced"
   hard: "hard"
   hero: "hero"
-
-  activerecord:
-    models:
-      test: "Test"
-      question: "Question"
-      answer: "Answer"
-      user: "User"
 
   layouts:
     application:
@@ -72,6 +67,8 @@ en:
         create: "Create test"
         update: "Update test"
     label:
+      user:
+        email: "E-mail"
       answer:
         body: "Body"
         correct: "Correct"

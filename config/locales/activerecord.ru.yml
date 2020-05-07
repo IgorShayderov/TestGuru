@@ -1,9 +1,15 @@
 ru:
-  activemodel:
+  activerecord:
     models:
       test: "Тест"
+      question: "Вопрос"
+      answer: "Ответ"
+      user: "Пользователь"
 
     attributes:
+      user:
+        first_name: "Имя"
+        last_name: "Фамилия"
       test:
         title: "Название"
 

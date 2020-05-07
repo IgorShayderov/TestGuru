@@ -12,6 +12,8 @@ ru:
   question: "вопрос"
   answer: "ответ"
   correct: "правилен ли"
+  not_authorized: 'У вас нет прав доступа к этой странице.'
+  say_hello: "Привет, %{name}"
 
   easy: "лёгкий"
   elementary: "элементарный"
@@ -41,6 +43,8 @@ ru:
         create: "Создать тест"
         update: "Обновить тест"
     label:
+      user:
+        email: "Электронная почта"
       answer:
         body: "Содержимое"
         correct: "Правилен ли"

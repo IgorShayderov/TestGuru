@@ -46,6 +46,7 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'devise-i18n'
   gem 'i18n-debug'
   gem 'letter_opener'
   gem 'listen', '>= 3.0.5', '< 3.2'
