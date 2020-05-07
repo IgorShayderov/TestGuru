@@ -3,11 +3,11 @@
   <td><%= test.title %></td>
   <td><%= test_level(test) %></td>
   <td class="text-center"><%= test.questions.count %></td>
-  <td ><%= link_to 'Show', admin_test_path(test), class: "badge badge-info" %></td>
-  <td><%= link_to 'Edit', edit_admin_test_path(test), class: "badge badge-warning" %></td>
-  <td><%= link_to 'Delete',
+  <td ><%= link_to t('show_action'), admin_test_path(test), class: "badge badge-info" %></td>
+  <td><%= link_to t('edit_action'), edit_admin_test_path(test), class: "badge badge-warning" %></td>
+  <td><%= link_to t('delete_action'),
                   admin_test_path(test),
                   method: :delete,
-                  data:  { confirm: 'Are you sure?' },
+                  data:  { confirm: t('.confirmation') },
                   class: "badge badge-danger" %></td>
 </tr>

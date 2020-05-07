@@ -29,12 +29,33 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:  
+en:
+  true: "true"
+  false: "false"
+  admin_panel: "Admin Panel"
+  back_action: "Back"
+  new_question_action: "New question"
+  show_action: "Show"
+  edit_action: "Edit"
+  delete_action: "Delete"
+  new_answer_action: "New answer"
+  create_new: "Create new"
+  question: "question"
+  answer: "answer"
+  correct: "correct"
+
   easy: "easy"
   elementary: "elementary"
   advanced: "advanced"
   hard: "hard"
   hero: "hero"
+
+  activerecord:
+    models:
+      test: "Test"
+      question: "Question"
+      answer: "Answer"
+      user: "User"
 
   layouts:
     application:
@@ -44,11 +65,18 @@ en:
       registration: "Regestration"
   helpers:
     submit:
+      answer:
+        create: "Create answer"
+        update: "Update answer"
       test:
         create: "Create test"
         update: "Update test"
-
     label:
+      answer:
+        body: "Body"
+        correct: "Correct"
+      question:
+        body: "Body"
       test:
         title: "Title"
         level: "Level"
@@ -88,10 +116,33 @@ en:
 
   admin:
     tests:
+      test:
+        confirmation: "Are you sure?"
       index:
-        header: "All tests"
+        new_test: "New test"
       create:
         success: "Test was successfully created."
+    show:
+      category: "Category"
+      question_id: "Question id"
+      body: "Body"
+      answers: "Answers"
+      actions: "Actions"
+    questions:
+      question:
+        confirmation: "Are you sure?"
+      show:
+        test_question: "%{title} test question"
+        answers: "Answers"
+    answers:
+      new:
+        new_answer: "New answer"
+      edit:
+        edit_answer: "Edit answer"
+      answer:
+        confirmation: "Are you sure?"
+    nav:
+      guru: "Guru"
 
   tests_mailer:
     completed_test:

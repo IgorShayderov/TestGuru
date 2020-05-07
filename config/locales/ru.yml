@@ -1,9 +1,30 @@
 ru:
+  true: "верно"
+  false: "неверно"
+  admin_panel: "Панель Администратора"
+  back_action: "Назад"
+  new_question_action: "Новый вопрос"
+  show_action: "Показать"
+  edit_action: "Редактировать"
+  delete_action: "Удалить"
+  new_answer_action: "Новый ответ"
+  create_new: "Создать новый"
+  question: "вопрос"
+  answer: "ответ"
+  correct: "правилен ли"
+
   easy: "лёгкий"
   elementary: "элементарный"
   advanced: "продвинутый"
   hard: "трудный"
   hero: "геройский"
+
+  activerecord:
+    models:
+      test: "Тест"
+      question: "Вопрос"
+      answer: "Ответ"
+      user: "Пользователь"
 
   layouts:
     application:
@@ -13,10 +34,18 @@ ru:
       registration: "Регистрация"
   helpers:
     submit:
+      answer:
+        create: "Создать ответ"
+        update: "Обновить ответ"
       test:
         create: "Создать тест"
         update: "Обновить тест"
     label:
+      answer:
+        body: "Содержимое"
+        correct: "Правилен ли"
+      question:
+        body: "Содержимое"
       test:
         title: "Название"
         level: "Уровень"
@@ -60,10 +89,33 @@ ru:
 
   admin:
     tests:
+      test:
+        confirmation: "Вы уверены?"
       index:
-        header: "Все тесты"
+        new_test: "Новый тест"
       create:
         success: "Тест был успешно создан."
+      show:
+        category: "Категория"
+        question_id: "Номер вопроса"
+        body: "Содержимое"
+        answers: "Ответы"
+        actions: "Действия"
+    questions:
+      question:
+        confirmation: "Вы уверены?"
+      show:
+        test_question: "Вопрос теста %{title}"
+        answers: "Ответы"
+    answers:
+      new:
+        new_answer: "Новый ответ"
+      edit:
+        edit_answer: "Редактировать ответ"
+      answer:
+        confirmation: "Вы уверены?"
+    nav:
+      guru: "Гуру"
 
   tests_mailer:
     completed_test:

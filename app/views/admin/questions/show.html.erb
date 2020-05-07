@@ -1,13 +1,13 @@
-<h3>"<%= @question.test.title %>" test question</h3>
+<h3><%= t('.test_question', title: @question.test.title) %></h3>
 
 <p><%= @question.body %></p>
 
-<h4>Answers <%= link_to 'New answer', new_admin_question_answer_path(@question), class: "btn btn-success btn-sm" %></h4>
+<h4><%= t('.answers') %> <%= link_to t('new_answer_action'), new_admin_question_answer_path(@question), class: "btn btn-success btn-sm" %></h4>
 
 <ol>
   <%= render @question.answers %>
 </ol>
 
 
-<%= link_to 'Edit', edit_admin_question_path, class: "btn btn-warning" %>
-<%= link_to 'Back', admin_tests_path(@question.test), class: "btn btn-secondary" %>
+<%= link_to t('edit_action'), edit_admin_question_path, class: "btn btn-warning" %>
+<%= link_to t('back_action'), admin_tests_path(@question.test), class: "btn btn-secondary" %>
