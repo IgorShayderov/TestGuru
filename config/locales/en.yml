@@ -29,14 +29,25 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+en:  
+  easy: "easy"
+  elementary: "elementary"
+  advanced: "advanced"
+  hard: "hard"
+  hero: "hero"
 
+  layouts:
+    application:
+      logout: "Logout"
+      welcome: "Welcome"
+      login: "Login"
+      registration: "Regestration"
   helpers:
     submit:
       test:
         create: "Create test"
         update: "Update test"
+
     label:
       test:
         title: "Title"
@@ -48,14 +59,32 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    footer:
+      project: "Project"
+      about: "Service for creating and passing tests."
+      author: "author: Shayderov Igor"
+      year: "year"
+      thinknetica: "Educational project in Thinknetica online school"
 
   tests:
     index:
       header: "All tests"
+      test_id: "Test id"
+      title: "Title"
+      level: "Level"
+    test:
+      start: "Start"
 
   test_passages:
     result:
       header: "Test %{title} was successfully completed."
+      completion: "%{num}% of completion."
+      test_passed: "Test passed"
+      test_failed: "Test failed"
+    show:
+      header: "Passing %{title} test"
+      question_of: "question of"
+      submit: "Next question"
 
   admin:
     tests:
@@ -67,3 +96,4 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed the Test Guru test"
+      more: "More"

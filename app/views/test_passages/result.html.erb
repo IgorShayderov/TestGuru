@@ -1,13 +1,13 @@
 <h2><%= t('.header', title: @test_passage.test.title) %></h2>
 
 <div>
-  <p><%= @test_passage.calc_success_percent %>% of completion.</p>
+  <p><%= t('.completion', num: @test_passage.calc_success_percent) %></p>
 
   <% if @test_passage.test_passed? %>
-    <p class="text-success"> Test passed </p>
+    <p class="text-success"><%= t('.test_passed') %></p>
   <% else %>
-    <p class="text-danger"> Test failed </p>
+    <p class="text-danger"><%= t('.test_failed') %></p>
   <% end %>
 
-<%= link_to 'Back', tests_path(@test_passage.test) %>
+<%= link_to t('buttons.back'), tests_path(@test_passage.test) %>
 </div>

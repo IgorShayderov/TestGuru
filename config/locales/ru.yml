@@ -1,6 +1,16 @@
 ru:
-  hello: "Привет мир"
+  easy: "лёгкий"
+  elementary: "элементарный"
+  advanced: "продвинутый"
+  hard: "трудный"
+  hero: "геройский"
 
+  layouts:
+    application:
+      logout: "Выход"
+      welcome: "Привет"
+      login: "Вход"
+      registration: "Регистрация"
   helpers:
     submit:
       test:
@@ -19,14 +29,34 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+    footer:
+      project: "Проект"
+      about: "Сервис для создания и прохождения тестов."
+      author: "автор: Шайдеров Игорь"
+      year: "год"
+      thinknetica: "Образовательный проект в онлайн школе Thinknetica"
 
   tests:
     index:
       header: "Все тесты"
+      test_id: "Номер теста"
+      title: "Название"
+      level: "Уровень"
+      questions: "Вопросы"
+      actions: "Действия"
+    test:
+      start: "Начать"
 
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
+      completion: "%{num}% завершения."
+      test_passed: "Тест пройден"
+      test_failed: "Тест провален"
+    show:
+      header: "Прохождение теста %{title}"
+      question_of: "вопрос из"
+      submit: "Следующий вопрос"
 
   admin:
     tests:
@@ -38,3 +68,4 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на Test Guru"
+      more: "Ещё"

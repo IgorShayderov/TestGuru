@@ -8,10 +8,10 @@ module TestsHelper
     "#{header_part} test"
   end
 
-  TEST_LEVELS = { 0 => :easy, 1 => :elementaty, 2 => :advanced, 3 => :hard}
+  TEST_LEVELS = { 0 => I18n.t('.easy'), 1 => I18n.t('.elementary'), 2 => I18n.t('.advanced'), 3 => I18n.t('.hard')}
 
   def test_level(test)
-    TEST_LEVELS[test.level] || :hero
+    TEST_LEVELS[test.level] || I18n.t('.hero')
   end
 
 end
