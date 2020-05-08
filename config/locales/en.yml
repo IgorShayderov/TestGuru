@@ -30,4 +30,118 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  true: "true"
+  false: "false"
+  admin_panel: "Admin Panel"
+  back_action: "Back"
+  new_question_action: "New question"
+  show_action: "Show"
+  edit_action: "Edit"
+  delete_action: "Delete"
+  new_answer_action: "New answer"
+  create_new: "Create new"
+  question: "question"
+  answer: "answer"
+  correct: "correct"
+  not_authorized: 'You are not authorized to view this page.'
+  say_hello: "Hello, %{name}"
+
+  easy: "easy"
+  elementary: "elementary"
+  advanced: "advanced"
+  hard: "hard"
+  hero: "hero"
+
+  layouts:
+    application:
+      logout: "Logout"
+      welcome: "Welcome"
+      login: "Login"
+      registration: "Regestration"
+  helpers:
+    submit:
+      answer:
+        create: "Create answer"
+        update: "Update answer"
+      test:
+        create: "Create test"
+        update: "Update test"
+    label:
+      user:
+        email: "E-mail"
+      answer:
+        body: "Body"
+        correct: "Correct"
+      question:
+        body: "Body"
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+    footer:
+      project: "Project"
+      about: "Service for creating and passing tests."
+      author: "author: Shayderov Igor"
+      year: "year"
+      thinknetica: "Educational project in Thinknetica online school"
+
+  tests:
+    index:
+      header: "All tests"
+      test_id: "Test id"
+      title: "Title"
+      level: "Level"
+    test:
+      start: "Start"
+
+  test_passages:
+    result:
+      header: "Test %{title} was successfully completed."
+      completion: "%{num}% of completion."
+      test_passed: "Test passed"
+      test_failed: "Test failed"
+    show:
+      header: "Passing %{title} test"
+      question_of: "question of"
+      submit: "Next question"
+
+  admin:
+    tests:
+      test:
+        confirmation: "Are you sure?"
+      index:
+        new_test: "New test"
+      create:
+        success: "Test was successfully created."
+    show:
+      category: "Category"
+      question_id: "Question id"
+      body: "Body"
+      answers: "Answers"
+      actions: "Actions"
+    questions:
+      question:
+        confirmation: "Are you sure?"
+      show:
+        test_question: "%{title} test question"
+        answers: "Answers"
+    answers:
+      new:
+        new_answer: "New answer"
+      edit:
+        edit_answer: "Edit answer"
+      answer:
+        confirmation: "Are you sure?"
+    nav:
+      guru: "Guru"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the Test Guru test"
+      more: "More"

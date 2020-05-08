@@ -1,5 +1,7 @@
-class TestsController < ApplicationController
+# frozen_string_literal: true
 
+class TestsController < ApplicationController
+  before_action :set_test, only: :start
   before_action :authenticate_user!
 
   def index
@@ -12,4 +14,9 @@ class TestsController < ApplicationController
     redirect_to current_user.test_passage(@test)
   end
 
+  private
+
+  def set_test
+    @test = Test.find(params[:id])
+  end
 end

@@ -21,7 +21,6 @@ class TestPassage < ApplicationRecord
     test.questions.index(current_question) + 1
   end
 
-
   def calc_success_percent
     (( self.correct_questions.to_f / self.test.questions.count.to_f) * 100).to_i
   end

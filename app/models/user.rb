@@ -25,4 +25,8 @@ class User < ApplicationRecord
       first_name :
       'please, specify your first name'
   end
+
+  def admin?
+    is_a?(Admin)
+  end
 end

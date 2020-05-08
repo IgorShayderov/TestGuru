@@ -1,7 +1,7 @@
-<h2>Edit answer</h2>
+<h2><%= t('.edit_answer') %></h2>
 
 <p><%= @answer.question.body %></p>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', admin_question_path(@answer.question), class: "btn btn-secondary"  %>
+<%= link_to t('back_action'), admin_question_path(@answer.question), class: "btn btn-secondary"  %>

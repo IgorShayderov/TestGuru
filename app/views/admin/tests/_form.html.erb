@@ -2,13 +2,13 @@
 
   <%= render 'shared/errors', resource: @test  %>
 
-  <%= form.label :title, class: "form-test__item" %>
+  <%= form.label :title, class: "form__item" %>
   <%= form.text_field :title, id: :test_title %>
 
-  <%= form.label :level, class: "form-test__item" %>
+  <%= form.label :level, class: "form__item" %>
   <%= form.number_field :level, id: :test_level %>
 
-  <%= form.label :category_id, class: "form-test__item" %>
+  <%= form.label :category_id, class: "form__item" %>
   <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: "form-test__item" %>
   <br>
   <%= form.submit class: "btn btn-primary" %>

@@ -1,6 +1,6 @@
   <ul class="author-info">
-      <li class="author-info__item">Project <a target="_blank" href="<%= github_url("IgorShayderov", "TestGuru") %>">TestGuru</a>, author: Igor Shayderov</li>
-      <li class="author-info__item">Service for creating and passing tests.</li>
-      <li class="author-info__item"><a target="_blank" href="https://thinknetica.com">Educational project in Thinknetica online school.</a></li>
-      <li class="author-info__item"><%= current_year %> год.</li>
+      <li class="author-info__item"><%= t('.project') %> <a target="_blank" href="<%= github_url("IgorShayderov", "TestGuru") %>">TestGuru</a>, <%= t('.author') %></li>
+      <li class="author-info__item"><%= t('.about') %></li>
+      <li class="author-info__item"><a target="_blank" href="https://thinknetica.com"><%= t('.thinknetica') %>.</a></li>
+      <li class="author-info__item"><%= current_year %> <%= t('.year') %>.</li>
   </ul>

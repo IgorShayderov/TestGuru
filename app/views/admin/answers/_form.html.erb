@@ -2,8 +2,8 @@
 
   <%= render 'shared/errors', resource: @answer  %>
 
-  <%= form.label :body, class: "form-answer__item" %>
-  <%= form.text_area :body, id: :answer_body, class: "form-answer__item", cols: 40 %>
+  <%= form.label :body, class: "form__item" %>
+  <%= form.text_area :body, id: :answer_body, class: "form__item", cols: 40 %>
 
   <%= form.label :correct %>:
   <%= form.check_box :correct, id: :answer_correct %><br>

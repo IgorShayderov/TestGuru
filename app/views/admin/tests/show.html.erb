@@ -1,20 +1,20 @@
-<h3>Test id: <%= @test.id %></h3>
+<h3><%= t('tests.index.test_id') %>: <%= @test.id %></h3>
 
 <ul>
-    <li>Title: <%= @test.title %></li>
-    <li>Category: <%= @test.category.title %></li>
-    <li>Level: <%= @test.level %></li>
+    <li><%= t('tests.index.title') %>: <%= @test.title %></li>
+    <li><%= t('.category') %>: <%= @test.category.title %></li>
+    <li><%= t('tests.index.level') %>: <%= @test.level %></li>
 </ul>
 
 <table class="table table-striped">
   <tr>
-    <th>Question id:</th>
-    <th>Body:</th>
-    <th>Answers:</th>
-    <th colspan="3" class="text-center">Actions:</th>
+    <th><%= t('.question_id') %>:</th>
+    <th><%= t('.body') %>:</th>
+    <th><%= t('.answers') %>:</th>
+    <th colspan="3" class="text-center"><%= t('.actions') %>:</th>
   </tr>
   <%= render @test.questions %>
 </table>
 
-<%= link_to 'Back', admin_tests_path, class: "btn btn-secondary" %>
-<%= link_to 'New question', new_admin_test_question_path(@test), class: "btn btn-success" %>
+<%= link_to t('back_action'), admin_tests_path, class: "btn btn-secondary" %>
+<%= link_to t('new_question_action'), new_admin_test_question_path(@test), class: "btn btn-success" %>

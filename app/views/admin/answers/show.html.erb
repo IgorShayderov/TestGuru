@@ -1,11 +1,11 @@
-<h3>Question</h3>
+<h3><%= t('question').capitalize%></h3>
 
 <%= @answer.question.body %>
 
-<h4>Answer:</h4>
+<h4><%= t('answer').capitalize%>:</h4>
 <p><%= @answer.body %></p>
 
-<h4>Correct:</h4>
-<p><%= @answer.correct %></p>
+<h4><%= t('correct').capitalize%>:</h4>
+<p><%= t("#{@answer.correct}") %></p>
 
-<%= link_to 'Back', admin_question_path(@answer.question), class: "btn btn-secondary"  %>
+<%= link_to t('back_action'), admin_question_path(@answer.question), class: "btn btn-secondary"  %>
