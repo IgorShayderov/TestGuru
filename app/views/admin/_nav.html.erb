@@ -1,8 +1,12 @@
-<div class="nav">
-  <span class="nav-item">TestGuru | <%= t('admin_panel') %> </span>
-  
-</div>
-<div>
+<nav class="navbar navbar-light">
+  <span class="navbar-brand">
+    <%= link_to "TestGuru", admin_tests_path %> | <%= t('admin_panel') %>
+  </span>
+
+  <%= link_to t('user_panel'), root_path, class: "nav-link" %>
+
+  <p class="navbar-text welcome-message">
     <%= t('layouts.application.welcome') %>, <b class=""><%= current_user.first_name %></b>
     <%= t('.guru') %> | <%= link_to t('layouts.application.logout'), destroy_user_session_path, method: :delete %>
-</div>
+  </p>
+</nav>

@@ -1,4 +1,6 @@
 ru:
+  user_panel: "Пользовательская панель"
+  specify_name: "пожалуйста, укажите ваше имя"
   true: "верно"
   false: "неверно"
   admin_panel: "Панель Администратора"
@@ -30,10 +32,6 @@ ru:
 
   layouts:
     application:
-      logout: "Выход"
-      welcome: "Привет"
-      login: "Вход"
-      registration: "Регистрация"
   helpers:
     submit:
       answer:
@@ -56,6 +54,11 @@ ru:
         category_id: "Категория"
 
   shared:
+    nav:
+      logout: "Выход"
+      login: "Вход"
+      registration: "Регистрация"
+      welcome: "Привет"
     errors:
       header:
         few: "Обнаружено %{count} ошибки"

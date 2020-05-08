@@ -23,7 +23,7 @@ class User < ApplicationRecord
   def name
     first_name.present? ?
       first_name :
-      'please, specify your first name'
+      I18n.t('specify_name')
   end
 
   def admin?
