@@ -26,6 +26,8 @@ gem 'pg'
 gem 'rspec'
 # Auth
 gem 'devise', '~> 4.0'
+# Networking
+gem 'faraday'
 # Localization
 gem 'rails-i18n'
 

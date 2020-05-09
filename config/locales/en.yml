@@ -113,6 +113,9 @@ en:
       header: "Passing %{title} test"
       question_of: "question of"
       submit: "Next question"
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gist"
 
   admin:
     tests:
