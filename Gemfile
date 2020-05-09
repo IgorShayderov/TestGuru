@@ -17,14 +17,17 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
-
+# UI
 gem 'bootstrap'
+gem 'jquery-rails'
 
 gem 'pg'
 
 gem 'rspec'
 # Auth
 gem 'devise', '~> 4.0'
+# Networking
+gem 'faraday'
 # Localization
 gem 'rails-i18n'
 

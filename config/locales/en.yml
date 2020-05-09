@@ -30,6 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  user_panel: "User panel"
+  specify_name: "please, specify your first name"
   true: "true"
   false: "false"
   admin_panel: "Admin Panel"
@@ -54,10 +56,6 @@ en:
 
   layouts:
     application:
-      logout: "Logout"
-      welcome: "Welcome"
-      login: "Login"
-      registration: "Regestration"
   helpers:
     submit:
       answer:
@@ -80,6 +78,11 @@ en:
         category_id: "Category"
 
   shared:
+    nav:
+      welcome: "Welcome"
+      logout: "Logout"
+      login: "Login"
+      registration: "Regestration"
     errors:
       header:
         one: "%{count} error detected"
@@ -110,6 +113,9 @@ en:
       header: "Passing %{title} test"
       question_of: "question of"
       submit: "Next question"
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gist"
 
   admin:
     tests:

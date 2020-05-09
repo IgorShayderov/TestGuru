@@ -2,16 +2,29 @@
 <html>
   <head>
     <title><%= t('admin_panel') %> | Test Guru</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render 'admin/nav'%>
-    <%= render 'shared/flash'%>
+    <header>
+      <%= render 'admin/nav'%>
+      <%= render 'shared/flash'%>
+    </header>
 
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
+
+    <footer>
+      <%= render 'shared/footer' %>
+    </footer>
   </body>
 </html>
