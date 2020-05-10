@@ -2,7 +2,7 @@
 
 class GitHubClient
   ROOT_ENDPOINT = 'https://api.github.com'
-  ACCESS_TOKEN = 'c341bc4de1b1d192b61df67068542d3e0c1d5e3e'
+  ACCESS_TOKEN = '02c4bfbde8b58f9acc3b0dc4c6b3477ebfa74498'
 
   def initialize
     @http_client = setup_http_client
@@ -22,3 +22,5 @@ class GitHubClient
     Faraday.new(url: ROOT_ENDPOINT)
   end
 end
+
+# client = Octokit::Client.new(access_token: ACCESS_TOKEN)

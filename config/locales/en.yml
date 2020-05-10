@@ -30,6 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  description: "A question about %{title} from TesGuru"
   user_panel: "User panel"
   specify_name: "please, specify your first name"
   true: "true"

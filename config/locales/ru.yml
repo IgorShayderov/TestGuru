@@ -1,4 +1,5 @@
 ru:
+  description: "Вопрос о %{title} из TesGuru"
   user_panel: "Пользовательская панель"
   specify_name: "пожалуйста, укажите ваше имя"
   true: "верно"
