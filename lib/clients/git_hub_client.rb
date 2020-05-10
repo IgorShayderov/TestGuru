@@ -22,5 +22,3 @@ class GitHubClient
     Faraday.new(url: ROOT_ENDPOINT)
   end
 end
-
-# client = Octokit::Client.new(access_token: ACCESS_TOKEN)
