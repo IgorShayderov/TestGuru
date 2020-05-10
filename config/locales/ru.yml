@@ -95,7 +95,7 @@ ru:
       question_of: "вопрос из"
       submit: "Следующий вопрос"
     gist:
-      success: "Gist успешно сохранён"
+      success: "Gist успешно сохранён!"
       failure: "Во время сохранения gist произошла ошибка"
 
   admin:

@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
+  before_action :html_safe_flash
 
   def default_url_options
     { lang: (I18n.locale if I18n.locale != I18n.default_locale) }
@@ -22,5 +23,9 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     I18n.locale = I18n.locale_available?(params[:lang]) ? params[:lang] : I18n.default_locale
+  end
+
+  def html_safe_flash
+    flash.now[:notice] = flash[:notice].html_safe if flash[:notice]
   end
 end
