@@ -12,7 +12,7 @@ end
 
 admin = Admin.create!([
   {
-    email: "super-admin@gmail.com",
+    email: "flashmob123@gmail.com",
     first_name: "Igor",
     last_name: "Shayderov",
     password: "Warcraft3",

@@ -33,6 +33,8 @@ ru:
 
   layouts:
     application:
+      welcome: "Привет"
+      logout: "Выход"
   helpers:
     submit:
       answer:
@@ -99,11 +101,19 @@ ru:
       failure: "Во время сохранения gist произошла ошибка"
 
   admin:
+    gists:
+      gist:
+        url: "Ссылка"
     tests:
       test:
         confirmation: "Вы уверены?"
       index:
+        gists_title: "Созданные пользователями Gists"
         new_test: "Новый тест"
+        gist_id: "Номер Gist"
+        gist_question: "Вопрос"
+        gists_url: "Ссылка"
+        user_email: "E-mail пользователя"
       create:
         success: "Тест был успешно создан."
       show:

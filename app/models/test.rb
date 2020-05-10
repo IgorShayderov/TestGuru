@@ -1,7 +1,4 @@
 class Test < ApplicationRecord
-
-  # after_initialize :set_defaults, unless: :persisted?
-
   belongs_to :author, class_name: 'User', foreign_key: 'user_id'
   belongs_to :category
   has_many :test_passages
@@ -22,9 +19,4 @@ class Test < ApplicationRecord
     tests_by_category_title(category_title)
       .pluck(:title)
   end
-
-  # def set_defaults
-  #   self.user_id ||= User.first.id
-  # end
-
 end

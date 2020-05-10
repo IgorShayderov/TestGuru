@@ -17,4 +17,7 @@ module ApplicationHelper
     CONTEXTUAL_CLASSES[key] || "success"
   end
 
+  def truncate_question(question)
+    question[0, 25]
+  end
 end
