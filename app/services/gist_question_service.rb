@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class GistQuestionService
-  # ACCESS_TOKEN = '02c4bfbde8b58f9acc3b0dc4c6b3477ebfa74498'
   ACCESS_TOKEN = ENV['ACCESS_TOKEN']
 
   def initialize(question, client: nil)
