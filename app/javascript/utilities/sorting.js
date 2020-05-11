@@ -4,7 +4,7 @@ document.addEventListener('turbolinks:load', function (e) {
   if (control) {
     control.addEventListener('click', sortRowsByTitle);
   }
-})
+});
 
 function sortRowsByTitle() {
   const table = document.querySelector('#tests-table');

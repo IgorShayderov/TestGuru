@@ -20,4 +20,5 @@ require("channels")
 //= require popper
 //= require bootstrap-sprockets
 
-require('utilities/sorting')
+require('utilities/sorting');
+require('utilities/password_verification');
