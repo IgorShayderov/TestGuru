@@ -8,13 +8,17 @@ document.addEventListener('turbolinks:load', function (e) {
 
     const passwordCoincide = () => {
       if (userPassword.value === userPasswordConfirmation.value) {
-        messageContainer.classList.add('alert-success');
-        messageContainer.classList.remove('alert-danger');
-        messageContainer.innerHTML = "Пароль совпадает";
+        if (!messageContainer.classList.contains('alert-success')) {
+          messageContainer.classList.add('alert-success');
+          messageContainer.classList.remove('alert-danger');
+          messageContainer.innerHTML = "Пароль совпадает";
+        }
       } else {
-        messageContainer.classList.add('alert-danger');
-        messageContainer.classList.remove('alert-success');
-        messageContainer.innerHTML = "Пароль не совпадает";
+        if (!messageContainer.classList.contains('alert-danger')) {
+          messageContainer.classList.add('alert-danger');
+          messageContainer.classList.remove('alert-success');
+          messageContainer.innerHTML = "Пароль не совпадает";
+        }
       }
     }
 
