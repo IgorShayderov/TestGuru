@@ -17,7 +17,7 @@ module ApplicationHelper
     CONTEXTUAL_CLASSES[key] || "success"
   end
 
-  def truncate_question(question)
-    question[0, 25]
+  def hash_from_gist_url(gist_url)
+    gist_url.split('/').last
   end
 end
