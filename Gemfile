@@ -17,12 +17,14 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+# ENV variables
+gem 'dotenv-rails', groups: [:development, :test]
 # UI
 gem 'bootstrap'
 gem 'jquery-rails'
-
+# Database
 gem 'pg'
-
+# Tests
 gem 'rspec'
 # Auth
 gem 'devise', '~> 4.0'
@@ -30,7 +32,8 @@ gem 'devise', '~> 4.0'
 gem 'faraday'
 # Localization
 gem 'rails-i18n'
-
+# To work with GitHub API
+gem 'octokit'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

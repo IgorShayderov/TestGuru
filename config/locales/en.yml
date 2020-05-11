@@ -30,6 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  description: "A question about %{title} from TesGuru"
   user_panel: "User panel"
   specify_name: "please, specify your first name"
   true: "true"
@@ -56,6 +57,8 @@ en:
 
   layouts:
     application:
+      welcome: "Привет"
+      logout: "Выход"
   helpers:
     submit:
       answer:
@@ -118,11 +121,19 @@ en:
       failure: "An error occurred while saving gist"
 
   admin:
+    gists:
+      gist:
+        url: "Url"
     tests:
       test:
         confirmation: "Are you sure?"
       index:
+        gists_title: "Gists created by users"
         new_test: "New test"
+        gist_id: "Gist id"
+        gist_question: "Question body"
+        gists_url: "Gist url"
+        user_email: "User e-mail"
       create:
         success: "Test was successfully created."
     show:

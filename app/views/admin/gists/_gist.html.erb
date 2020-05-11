@@ -1,0 +1,6 @@
+ <tr>
+  <td class="text-center"><%= gist.id %></td>
+  <td class="text-center"><%= link_to truncate(gist.question.body, length: 25), admin_question_path(gist.question) %></td>
+  <td class="text-center"><%= link_to hash_from_gist_url(gist.url), gist.url %></td>
+  <td class="text-center"><%= gist.user.email %></td>
+</tr>

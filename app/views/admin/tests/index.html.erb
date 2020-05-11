@@ -15,4 +15,22 @@
   </tbody>
 </table>
 
+<% if @gists.count.positive? %>
+  <h2 class="text-center"><%= t('.gists_title') %></h2>
+
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th class="text-center"><%= t('.gist_id') %></th>
+        <th class="text-center"><%= t('.gist_question') %></th>
+        <th class="text-center"><%= t('.gists_url') %></th>
+        <th class="text-center"><%= t('.user_email') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @gists %>
+    </tbody>
+  </table>
+<% end %>
+
 <%= link_to t('.new_test'), new_admin_test_path, class: "btn btn-success" %>

@@ -17,4 +17,7 @@ module ApplicationHelper
     CONTEXTUAL_CLASSES[key] || "success"
   end
 
+  def hash_from_gist_url(gist_url)
+    gist_url.split('/').last
+  end
 end

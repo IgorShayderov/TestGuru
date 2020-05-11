@@ -1,4 +1,5 @@
 ru:
+  description: "Вопрос о %{title} из TesGuru"
   user_panel: "Пользовательская панель"
   specify_name: "пожалуйста, укажите ваше имя"
   true: "верно"
@@ -32,6 +33,8 @@ ru:
 
   layouts:
     application:
+      welcome: "Привет"
+      logout: "Выход"
   helpers:
     submit:
       answer:
@@ -94,15 +97,23 @@ ru:
       question_of: "вопрос из"
       submit: "Следующий вопрос"
     gist:
-      success: "Gist успешно сохранён"
+      success: "Gist успешно сохранён!"
       failure: "Во время сохранения gist произошла ошибка"
 
   admin:
+    gists:
+      gist:
+        url: "Ссылка"
     tests:
       test:
         confirmation: "Вы уверены?"
       index:
+        gists_title: "Созданные пользователями Gists"
         new_test: "Новый тест"
+        gist_id: "Номер Gist"
+        gist_question: "Вопрос"
+        gists_url: "Ссылка"
+        user_email: "E-mail пользователя"
       create:
         success: "Тест был успешно создан."
       show:
