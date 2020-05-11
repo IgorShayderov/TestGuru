@@ -22,6 +22,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 # UI
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'octicons_helper'
 # Database
 gem 'pg'
 # Tests
