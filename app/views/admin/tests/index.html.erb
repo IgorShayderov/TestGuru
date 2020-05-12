@@ -1,10 +1,14 @@
 <h1 class="text-center"><%= t('tests.index.header') %></h1>
 
-<table class="table table-striped">
+<table id="tests-table" class="table table-striped">
   <thead class="thead-dark">
     <tr>
       <th class="text-center"><%= t('tests.index.test_id') %>:</th>
-      <th><%= t('tests.index.title') %>:</th>
+      <th class="sort-by-title pointer">
+        <%= t('tests.index.title') %>:
+        <%= octicon "arrow-up", class: "text-success hide" %>
+        <%= octicon "arrow-down", class: "text-success hide" %>
+      </th>
       <th><%= t('tests.index.level') %>:</th>
       <th class="text-center"><%= t('tests.index.questions') %>:</th>
       <th colspan="3" class="text-center"><%= t('tests.index.actions') %>:</th>
@@ -14,6 +18,8 @@
     <%= render @tests %>
   </tbody>
 </table>
+
+<%= link_to t('.new_test'), new_admin_test_path, class: "btn btn-success" %>
 
 <% if @gists.count.positive? %>
   <h2 class="text-center"><%= t('.gists_title') %></h2>
@@ -32,5 +38,3 @@
     </tbody>
   </table>
 <% end %>
-
-<%= link_to t('.new_test'), new_admin_test_path, class: "btn btn-success" %>

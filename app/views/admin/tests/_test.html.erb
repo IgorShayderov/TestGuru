@@ -1,6 +1,6 @@
  <tr>
   <td class="text-center"><%= test.id %></td>
-  <td><%= test.title %></td>
+  <td class="test-title"><%= test.title %></td>
   <td><%= test_level(test) %></td>
   <td class="text-center"><%= test.questions.count %></td>
   <td ><%= link_to t('show_action'), admin_test_path(test), class: "badge badge-info" %></td>

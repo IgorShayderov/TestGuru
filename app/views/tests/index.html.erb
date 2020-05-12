@@ -1,10 +1,14 @@
 <h1 class="text-center"><%= t('tests.index.header') %></h1>
 
-<table class="table table-striped">
+<table id="tests-table" class="table table-striped">
   <thead class="thead-dark">
     <tr>
       <th class="text-center"><%= t('.test_id') %>:</th>
-      <th><%= t('.title') %>:</th>
+      <th class="sort-by-title pointer">
+        <%= t('.title') %>:
+        <%= octicon "arrow-up", class: "text-success hide" %>
+        <%= octicon "arrow-down", class: "text-success hide" %>
+      </th>
       <th><%= t('.level') %>:</th>
       <th class="text-center"><%= t('.questions') %>:</th>
       <th class="text-center"><%= t('.actions') %>:</th>
