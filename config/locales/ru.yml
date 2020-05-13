@@ -89,7 +89,7 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
-      completion: "%{num}% завершения."
+      success: "%{num}% успешности."
       test_passed: "Тест пройден"
       test_failed: "Тест провален"
     show:
@@ -105,6 +105,8 @@ ru:
       gist:
         url: "Ссылка"
     tests:
+      form_inline:
+        submit: "Принять"
       test:
         confirmation: "Вы уверены?"
       index:

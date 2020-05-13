@@ -19,6 +19,8 @@ admin = Admin.create!([
   },
 ])
 
+admin_id = row_id_by_attr_value(admin, :first_name, "Igor")
+
 categories = Category.create!([
   {title: "Programming"},
   {title: "History"},
@@ -30,15 +32,15 @@ history_id = row_id_by_attr_value(categories, :title, "History")
 geography_id = row_id_by_attr_value(categories, :title, "Geography")
 
 tests = Test.create!([
-  {title: "HTML", category_id: programming_id},
-  {title: "Javascript", category_id: programming_id, level: 1},
-  {title: "React", category_id: programming_id, level: 2},
-  {title: "Ancient Rome", category_id: history_id, level: 1},
-  {title: "Cities", category_id: geography_id, level: 1},
-  {title: "Ruby on Rails", category_id: programming_id, level: 4},
-  {title: "Ancient Architecture", category_id: history_id, level: 6},
-  {title: "Vue.js", category_id: programming_id, level: 3},
-  {title: "Countries", category_id: geography_id, level: 2},
+  {title: "HTML", category_id: programming_id, user_id: admin_id},
+  {title: "Javascript", category_id: programming_id, level: 1, user_id: admin_id},
+  {title: "React", category_id: programming_id, level: 2, user_id: admin_id},
+  {title: "Ancient Rome", category_id: history_id, level: 1, user_id: admin_id},
+  {title: "Cities", category_id: geography_id, level: 1, user_id: admin_id},
+  {title: "Ruby on Rails", category_id: programming_id, level: 4, user_id: admin_id},
+  {title: "Ancient Architecture", category_id: history_id, level: 6, user_id: admin_id},
+  {title: "Vue.js", category_id: programming_id, level: 3, user_id: admin_id},
+  {title: "Countries", category_id: geography_id, level: 2, user_id: admin_id},
 ])
 
 html_test_id = row_id_by_attr_value(tests, :title, "HTML")

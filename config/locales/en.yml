@@ -109,7 +109,7 @@ en:
   test_passages:
     result:
       header: "Test %{title} was successfully completed."
-      completion: "%{num}% of completion."
+      success: "%{num}% of success."
       test_passed: "Test passed"
       test_failed: "Test failed"
     show:
@@ -125,6 +125,8 @@ en:
       gist:
         url: "Url"
     tests:
+      form_inline:
+        submit: "Accept"
       test:
         confirmation: "Are you sure?"
       index:

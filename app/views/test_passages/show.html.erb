@@ -1,7 +1,19 @@
 <h2><%= t('.header', title: @test_passage.test.title) %></h2>
 
-<p>
-  <%= @test_passage.current_question_index %> <%= t('.question_of') %> <%= @test_passage.test.questions.count %>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+<p class="test-progress">
+  <%= content_tag :span, @test_passage.current_question_index,
+      class: "current-question-index",
+      data: { question_index: @test_passage.current_question_index } %>
+
+  <%= t('.question_of') %>
+
+    <%= content_tag :span, @test_passage.test.questions.count,
+      class: "max-question-index",
+      data: { question_max: @test_passage.test.questions.count } %>
 </p>
 
 <p> <%= @test_passage.current_question.body %> </p>
