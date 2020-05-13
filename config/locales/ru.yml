@@ -89,7 +89,7 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
-      completion: "%{num}% завершения."
+      success: "%{num}% успешности."
       test_passed: "Тест пройден"
       test_failed: "Тест провален"
     show:
