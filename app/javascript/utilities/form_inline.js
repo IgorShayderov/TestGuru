@@ -2,17 +2,17 @@ document.addEventListener('turbolinks:load', function (e) {
   const controls = document.querySelectorAll('.form-inline-link');
 
   const formInlineHandler = (testId) => {
-    const $link = $(`.form-inline-link[data-test-id="${testId}"]`);
+    const link = document.querySelector(`.form-inline-link[data-test-id="${testId}"]`);
     const $testTitle = $(`.test-title[data-test-id="${testId}"]`);
     const $formInline = $(`.form-inline[data-test-id="${testId}"]`);
 
     $formInline.toggle();
     $testTitle.toggle();
-
+  
     if ($formInline.is(':visible')) {
-      $link.textContent = 'Отменить';
+      link.text = 'Отменить';
     } else {
-      $link.textContent = 'Редактировать';
+      link.text = 'Редактировать';
     }
   };
 

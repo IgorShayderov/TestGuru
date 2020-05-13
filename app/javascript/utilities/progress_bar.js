@@ -5,8 +5,8 @@ document.addEventListener('turbolinks:load', function (e) {
     const progressBar = document.querySelector('.progress-bar');
     const currentQuestionIndex = testProgress.querySelector('.current-question-index').dataset.questionIndex;
     const maxQuestionCount = testProgress.querySelector('.max-question-index').dataset.questionMax;
-    const completionPercent = currentQuestionIndex / maxQuestionCount * 100
+    const completionPercent = currentQuestionIndex / maxQuestionCount * 100;
 
-    progressBar.style.width = `${completionPercent}%`
+    progressBar.style.width = `${completionPercent}%`;
   }
 });
