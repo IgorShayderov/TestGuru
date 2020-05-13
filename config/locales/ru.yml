@@ -105,6 +105,8 @@ ru:
       gist:
         url: "Ссылка"
     tests:
+      form_inline:
+        submit: "Принять"
       test:
         confirmation: "Вы уверены?"
       index:

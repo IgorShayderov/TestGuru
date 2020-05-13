@@ -1,9 +1,10 @@
 <h1 class="text-center"><%= t('tests.index.header') %></h1>
 
+<%= render 'shared/errors', resource: @test %>
+
 <table id="tests-table" class="table table-striped">
   <thead class="thead-dark">
     <tr>
-      <th class="text-center"><%= t('tests.index.test_id') %>:</th>
       <th class="sort-by-title pointer">
         <%= t('tests.index.title') %>:
         <%= octicon "arrow-up", class: "text-success hide" %>
