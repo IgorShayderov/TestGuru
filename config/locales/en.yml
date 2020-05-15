@@ -64,6 +64,8 @@ en:
       answer:
         create: "Create answer"
         update: "Update answer"
+      feedback:
+        create: "Send"
       test:
         create: "Create test"
         update: "Update test"
@@ -159,6 +161,13 @@ en:
         confirmation: "Are you sure?"
     nav:
       guru: "Guru"
+
+  feedback:
+    new:
+      title: "Feedback"
+    create:
+      success: "Feedback message was successfully sent"
+      fail: "Failed to send feedback message"
 
   tests_mailer:
     completed_test:

@@ -1,0 +1,19 @@
+<div class="ml-1">
+  <h3><%= t('.title') %></h3>
+
+  <%= form_with model: @feedback, url: feedback_index_path, local: true do |form| %>
+
+    <%= render 'shared/errors', resource: @feedback  %>
+
+    <%= form.label :email, class: "form__item" %>
+    <%= form.text_field :email, id: :feedback_email, class: "form__item" %>
+
+    <%= form.label :text, class: "form__item" %>
+    <%= form.text_area :text, id: :feedback_text, class: "form__item", cols: 40, rows: 10 %>
+
+    <%= form.submit class: "btn btn-primary" %>
+
+  <% end %>
+
+  <%= link_to t('back_action'), tests_path, class: "btn btn-success" %>
+</div>

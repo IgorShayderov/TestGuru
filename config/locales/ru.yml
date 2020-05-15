@@ -40,6 +40,8 @@ ru:
       answer:
         create: "Создать ответ"
         update: "Обновить ответ"
+      feedback:
+        create: "Отправить"
       test:
         create: "Создать тест"
         update: "Обновить тест"
@@ -139,6 +141,13 @@ ru:
         confirmation: "Вы уверены?"
     nav:
       guru: "Гуру"
+
+  feedback:
+    new:
+      title: "Обратная связь"
+    create:
+      success: "Сообщение с обратной связью успешно отправлено"
+      fail: "Не удалось отправить сообщение с обратной связью"
 
   tests_mailer:
     completed_test:
