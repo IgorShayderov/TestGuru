@@ -41,6 +41,7 @@ ru:
       updated_not_active: "Пароль успешно изменён."
     registrations:
       new:
+        sign_up: "Зарегистрироваться"
         min_password_characters: 
           one: "%{count} символ минимум"
           many: "%{count} символов минимум"
@@ -66,6 +67,9 @@ ru:
       unlocked: "Ваша учётная запись разблокирована. Теперь вы вошли в систему."
     shared:
       links:
+        activerecord:
+          models:
+            feedback: "Обратная связь"
         log_in: "Вход"
         sign_up: "Регистрация"
         forgot_password: "Забыли пароль?"

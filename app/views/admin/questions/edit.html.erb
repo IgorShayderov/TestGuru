@@ -1,7 +1,5 @@
-<div class="ml-3">
-  <h2><%= question_header(@question) %></h2>
+<h2><%= question_header(@question) %></h2>
 
-  <%= render 'form' %>
+<%= render 'form' %>
 
-  <%= link_to t('back_action'), admin_tests_path(@question.test), class: "btn btn-secondary"  %>
-</div>
+<%= link_to t('back_action'), admin_tests_path(@question.test), class: "btn btn-secondary"  %>
