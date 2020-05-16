@@ -1,6 +1,9 @@
-<h2><%= t('.new_answer') %></h2>
+<div class="ml-3">
+  <h2><%= t('.new_answer') %></h2>
 
-<p><%= @question.body %></p>
+  <p><%= @question.body %></p>
 
-<%= render 'form' %>
-<%= link_to t('back_action'), admin_question_path(@question), class: "btn btn-secondary"  %>
+  <%= render 'form' %>
+
+  <%= link_to t('back_action'), admin_question_path(@question), class: "btn btn-secondary"  %>
+</div>
