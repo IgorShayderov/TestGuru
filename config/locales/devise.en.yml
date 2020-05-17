@@ -40,6 +40,7 @@ en:
       updated_not_active: "Your password has been changed successfully."
     registrations:
       new:
+        sign_up: "Sign up"
         min_password_characters: 
           one: "%{length} character minimum"
           many: "%{length} characters minimum"
@@ -65,6 +66,9 @@ en:
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
     shared:
       links:
+        activerecord:
+          models:
+            feedback: "Обратная связь"
         log_in: "Log in"
         sign_up: "Sign up"
         forgot_password: "Forgot your password?"

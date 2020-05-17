@@ -1,12 +1,13 @@
-class TestPassage < ApplicationRecord
+# frozen_string_literal: true
 
+class TestPassage < ApplicationRecord
   PERCENT_TO_PASS = 85
 
   belongs_to :user
   belongs_to :test
-  belongs_to :current_question, class_name: "Question", optional: true
+  belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_next_question, on: [:create, :update]
+  before_validation :before_validation_set_next_question, on: %i[create update]
 
   def completed?
     current_question.nil?
@@ -22,7 +23,7 @@ class TestPassage < ApplicationRecord
   end
 
   def calc_success_percent
-    (( self.correct_questions.to_f / self.test.questions.count.to_f) * 100).to_i
+    (( self.correct_questions.to_f / self.test.questions.count) * 100).to_i
   end
 
   def test_passed?
@@ -36,7 +37,7 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    self.current_question ?
+    current_question ?
       test.questions.order(:id).where('id > ?', current_question.id).first :
       test.questions.first
   end
@@ -45,7 +46,7 @@ class TestPassage < ApplicationRecord
     correct_answers_count = correct_answers.count
 
     (correct_answers_count == correct_answers.where(id: answer_ids).count) &&
-    correct_answers_count == answer_ids.count
+      correct_answers_count == answer_ids.count
   end
 
   def correct_answers

@@ -5,11 +5,15 @@ ru:
       question: "Вопрос"
       answer: "Ответ"
       user: "Пользователь"
+      feedback: "Обратная связь"
 
     attributes:
       user:
         first_name: "Имя"
         last_name: "Фамилия"
+      feedback:
+        email: "Email"
+        text: "Текст"
       test:
         title: "Название"
 

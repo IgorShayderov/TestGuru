@@ -2,11 +2,11 @@
 
   <%= render 'shared/errors', resource: @answer  %>
 
-  <%= form.label :body, class: "form__item" %>
-  <%= form.text_area :body, id: :answer_body, class: "form__item", cols: 40 %>
+  <%= form.label :body, class: "form__item ml-2" %>
+  <%= form.text_area :body, id: :answer_body, class: "form__item ml-2", cols: 40 %>
 
-  <%= form.label :correct %>:
+  <%= form.label :correct, class: "ml-2" %>:
   <%= form.check_box :correct, id: :answer_correct %><br>
 
-  <%= form.submit class: "form-answer__submit" %>
+  <%= form.submit class: "btn btn-primary" %>
 <% end %>
