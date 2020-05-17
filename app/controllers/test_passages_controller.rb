@@ -33,7 +33,7 @@ class TestPassagesController < ApplicationController
       Gist.create!(
         {
           question: @test_passage.current_question,
-          url: result.data.url,
+          url: result.data.html_url,
           user: current_user
         }
       )
