@@ -1,0 +1,16 @@
+ <tr>
+  <td>тут будет иконка</td>
+  <td class="text-center"><%= badge.title %></td>
+  <td class="text-center"><%= link_to t("show_action"), admin_badge_path(test), class: "badge badge-info" %></td>
+  <td class="text-center">
+    <%= link_to t("edit_action"),
+        edit_admin_badge_path(badge),
+        data:  { test_id: test.id },
+        class: "form-inline-link badge badge-warning" %>
+  </td>
+  <td class="text-center"><%= link_to t("delete_action"),
+                  admin_test_path(test),
+                  method: :delete,
+                  data:  { confirm: t(".confirmation") },
+                  class: "badge badge-danger" %></td>
+</tr>

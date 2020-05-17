@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   root 'tests#index'
 
-  devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }, controllers: { sessions: 'users/sessions' }
+  devise_for :users,
+             path: :gurus,
+             path_names: { sign_in: :login, sign_out: :logout },
+             controllers: { sessions: 'users/sessions' }
 
   resources :tests, only: :index do
     post :start, on: :member
@@ -17,6 +20,8 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :badges
+
     resources :tests do
       patch :update_inline, on: :member
 
