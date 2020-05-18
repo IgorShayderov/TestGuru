@@ -30,6 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  badges: "Badges"
   description: "A question about %{title} from TesGuru"
   user_panel: "User panel"
   specify_name: "please, specify your first name"
@@ -48,6 +49,8 @@ en:
   correct: "correct"
   not_authorized: 'You are not authorized to view this page.'
   say_hello: "Hello, %{name}"
+  create_new: "Create new"
+  edit: "Edit"
 
   easy: "easy"
   elementary: "elementary"
@@ -64,6 +67,8 @@ en:
       answer:
         create: "Create answer"
         update: "Update answer"
+      badge:
+        icon: "Icon"
       feedback:
         create: "Send"
       test:
@@ -123,6 +128,13 @@ en:
       failure: "An error occurred while saving gist"
 
   admin:
+    badges:
+      index:
+        header: "Badges"
+        icon: "Icon"
+        title: "Title"
+        condition: "Condition"
+        actions: "Actions"
     gists:
       gist:
         url: "Url"

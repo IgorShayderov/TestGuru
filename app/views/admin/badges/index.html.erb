@@ -1,19 +1,19 @@
-<h1 class="text-center"><%= t('badges.index.header') %></h1>
+<h1 class="text-center"><%= t('.header') %></h1>
 
 <%= render 'shared/errors', resource: @badge %>
 
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
-      <th class="text-center">><%= t('.icon') %>:</th>
-      <th class="text-center">><%= t('.title') %></th>
+      <th class="text-center"><%= t('.icon') %>:</th>
+      <th class="text-center"><%= t('.title') %>:</th>
       <th class="text-center"><%= t('.condition') %>:</th>
       <th colspan="3" class="text-center"><%= t('.actions') %>:</th>
     </tr>
   </thead>
   <tbody>
-    <%= render @badge %>
+    <%= render @badges %>
   </tbody>
 </table>
 
-<%= link_to t('.new_test'), new_admin_badge_path, class: "btn btn-success" %>
+<%= link_to t('.new_badge'), new_admin_badge_path, class: "btn btn-success" %>

@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
 class Badge < ApplicationRecord
-  validates :title, :path, presence: true
+  attr_accessor :conditions
+
+  has_many :users_badges, dependent: :destroy
+
+  validates :title, :icon, :condition, presence: true
 end

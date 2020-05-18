@@ -1,4 +1,5 @@
 ru:
+  badges: "Значки"
   description: "Вопрос о %{title} из TesGuru"
   user_panel: "Пользовательская панель"
   specify_name: "пожалуйста, укажите ваше имя"
@@ -17,6 +18,8 @@ ru:
   correct: "правилен ли"
   not_authorized: 'У вас нет прав доступа к этой странице.'
   say_hello: "Привет, %{name}"
+  create_new: "Создать новый"
+  edit: "Редактировать"
 
   easy: "лёгкий"
   elementary: "элементарный"
@@ -51,6 +54,8 @@ ru:
       answer:
         body: "Содержимое"
         correct: "Правилен ли"
+      badge:
+        icon: "Иконка"
       question:
         body: "Содержимое"
       test:
@@ -103,6 +108,13 @@ ru:
       failure: "Во время сохранения gist произошла ошибка"
 
   admin:
+    badges:
+      index:
+        header: "Значки"
+        icon: "Иконка"
+        title: "Название"
+        condition: "Условие"
+        actions: "Действия"
     gists:
       gist:
         url: "Ссылка"
