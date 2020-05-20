@@ -19,7 +19,7 @@ class TestPassage < ApplicationRecord
       relate_to: Test,
       exec: lambda do |user_id, test_id|
         seached_test = TestPassage.where(user_id: user_id, test_id: test_id)
-        (seached_test.count == 1) && seached_test.test_passed?
+        (seached_test.count == 1)
       end,
       description: 'Выдать бэйдж после успешного прохождения теста с первой попытки'
     },

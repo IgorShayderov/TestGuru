@@ -11,24 +11,24 @@ class TestPassagesController < ApplicationController
       render plain: 'There are no questions.'
     end
   end
-  # test_passage = TestPassage.new(user: User.first, test: Test.first)
+
   def result
-    # тут запускаются все добавленные кондишены
     Badge.all.pluck(:condition, :condition_param, :id).each do |array|
       condition_id = array[0]
       condition_param = array[1]
       badge_id = array[2]
       badge = Badge.find(badge_id)
 
+
+      hz = UsersBadge.where(user: current_user, badge_id: badge_id, test_passage_id: params[:id])
+
+      p "!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      p "have badge yet?#{hz.count.positive?}"
+
+      next if hz.count.positive?
       if obtained_badge?(condition_id, condition_param)
+        new_badge = UsersBadge.new(user: current_user, badge_id: badge_id, test_passage_id: params[:id])
 
-        if already_have_badge?(badge_id)
-          UsersBadge.where(user: current_user, badge: badge).badge_count += 1
-        else
-          new_badge = UsersBadge.new(user: current_user, badge_id: badge_id, badge_count: 1)
-        end
-
-        p "#{new_badge.save} badge saved?"
         flash[badge.title.to_sym] = "Вы получили новый значок <i class=\'fas fa-#{badge.icon} fa-3x'></i>" if new_badge.save
       end
     end
@@ -40,7 +40,7 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
-      TestsMailer.completed_test(@test_passage).deliver_now
+      # TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
