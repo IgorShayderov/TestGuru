@@ -20,17 +20,16 @@ class TestPassagesController < ApplicationController
       badge_id = array[2]
       badge = Badge.find(badge_id)
 
-      p "!!!!!!!!!!!"
-      p got_badge?(condition_id, condition_param)
+      if obtained_badge?(condition_id, condition_param)
 
-      if got_badge?(condition_id, condition_param)
         if already_have_badge?(badge_id)
           UsersBadge.where(user: current_user, badge: badge).badge_count += 1
         else
-          new_badge = UsersBadge.new(user: current_user, badge_id: badge_id, count: 1)
+          new_badge = UsersBadge.new(user: current_user, badge_id: badge_id, badge_count: 1)
         end
 
-        flash[badge.title.to_sym] = "Вы получили новый значок" if new_badge.save
+        p "#{new_badge.save} badge saved?"
+        flash[badge.title.to_sym] = "Вы получили новый значок <i class=\'fas fa-#{badge.icon} fa-3x'></i>" if new_badge.save
       end
     end
 
@@ -69,7 +68,7 @@ class TestPassagesController < ApplicationController
 
   private
 
-  def got_badge?(condition_id, condition_param)
+  def obtained_badge?(condition_id, condition_param)
     TestPassage.conditions[condition_id.to_sym][:exec].call(current_user.id, condition_param)
   end
 
