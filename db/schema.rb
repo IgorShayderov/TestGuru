@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_05_17_145609) do
     t.string "title", null: false
     t.string "icon", null: false
     t.string "condition", null: false
+    t.string "condition_param", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -109,7 +110,7 @@ ActiveRecord::Schema.define(version: 2020_05_17_145609) do
   create_table "users_badges", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "badge_id", null: false
-    t.integer "count", default: 0
+    t.integer "badge_count", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["badge_id"], name: "index_users_badges_on_badge_id"

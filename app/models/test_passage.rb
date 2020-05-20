@@ -3,6 +3,36 @@
 class TestPassage < ApplicationRecord
   PERCENT_TO_PASS = 85
 
+  cattr_reader :conditions
+
+  @@conditions = {
+    condition_1: {
+      relate_to: Category,
+      exec: lambda do |user_id, category_id|
+        all_category_tests_ids = Test.where(category: category_id).pluck(:id)
+        all_user_tests_ids = TestPassage.where(user_id: user_id).pluck(:test_id)
+        (all_category_tests_ids - all_user_tests_ids).empty?
+      end,
+      description: 'Успешное прохождения всех тестов из категории'
+    },
+    condition_2: {
+      relate_to: Test,
+      exec: lambda do |user_id, test_id|
+        TestPassage.where(user_id: user_id, test_id: test_id).count == 1
+      end,
+      description: 'Выдать бэйдж после успешного прохождения теста с первой попытки'
+    },
+    condition_3: {
+      relate_to: nil,
+      exec: lambda do |user_id, level|
+        all_tests_of_lvl_ids = Test.where(level: level).pluck(:id)
+        all_user_tests_ids = TestPassage.where(user_id: user_id).pluck(:id)
+        (all_tests_of_lvl_ids - all_user_tests_ids).empty?
+      end,
+      description: 'Выдать бэйдж после успешного прохождения всех тестов определённого уровня'
+    }
+  }
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
@@ -23,7 +53,7 @@ class TestPassage < ApplicationRecord
   end
 
   def calc_success_percent
-    (( self.correct_questions.to_f / self.test.questions.count) * 100).to_i
+    ((self.correct_questions.to_f / self.test.questions.count) * 100).to_i
   end
 
   def test_passed?
@@ -31,6 +61,8 @@ class TestPassage < ApplicationRecord
   end
 
   private
+
+  cattr_writer :avaliable_conditions
 
   def before_validation_set_next_question
     self.current_question = next_question

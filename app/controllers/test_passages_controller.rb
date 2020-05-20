@@ -11,8 +11,31 @@ class TestPassagesController < ApplicationController
       render plain: 'There are no questions.'
     end
   end
+  # test_passage = TestPassage.new(user: User.first, test: Test.first)
+  def result
+    # тут запускаются все добавленные кондишены
+    Badge.all.pluck(:condition, :condition_param, :id).each do |array|
+      condition_id = array[0]
+      condition_param = array[1]
+      badge_id = array[2]
+      badge = Badge.find(badge_id)
 
-  def result; end
+      p "!!!!!!!!!!!"
+      p got_badge?(condition_id, condition_param)
+
+      if got_badge?(condition_id, condition_param)
+        if already_have_badge?(badge_id)
+          UsersBadge.where(user: current_user, badge: badge).badge_count += 1
+        else
+          new_badge = UsersBadge.new(user: current_user, badge_id: badge_id, count: 1)
+        end
+
+        flash[badge.title.to_sym] = "Вы получили новый значок" if new_badge.save
+      end
+    end
+
+    render :result
+  end
 
   def update
     @test_passage.accept!(params[:answer_ids])
@@ -45,6 +68,14 @@ class TestPassagesController < ApplicationController
   end
 
   private
+
+  def got_badge?(condition_id, condition_param)
+    TestPassage.conditions[condition_id.to_sym][:exec].call(current_user.id, condition_param)
+  end
+
+  def already_have_badge?(badge_id)
+    UsersBadge.where(user: current_user, badge: Badge.find(badge_id)).any?
+  end
 
   def success_message(url)
     view_context.link_to(t('.success'), url)

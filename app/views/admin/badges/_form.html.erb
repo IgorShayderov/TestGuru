@@ -15,8 +15,15 @@
     <i class="fas fa-award fa-3x icons-select__item"></i>
   </div>
 
-  <%= form.label :condition, class: "form__item ml-2" %>
-  <%= form.collection_select :condition, Category.all, :id, :title,{ prompt: true }, { class: "form__item ml-2" } %>
+  <p class="ml-2"><%= t('.conditions') %></p>
+
+  <% TestPassage.conditions.each do |key, value| %>
+    <%= form.radio_button :condition, key.to_s, class: "ml-2" %>
+    <%= form.label :condition, value[:description], value: key.to_s, class: "ml-2" %>
+    <br>
+  <% end %>
+
+  <%= form.collection_select :condition_param, Category.all, :id, :title,{ prompt: true }, { class: "form__item ml-2 hide" } %>
 
   <%= form.submit class: "btn btn-primary" %>
 <% end %>

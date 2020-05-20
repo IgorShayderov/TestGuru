@@ -5,11 +5,18 @@
   <td class="text-center">
     <%= badge.title %>
   </td>
-  <td>
-  
+  <td class="text-center">
+    <%= TestPassage.conditions[badge.condition.to_sym][:description] %>
   </td>
   <td class="text-center">
-    <%= link_to t("show_action"), admin_badge_path(test), class: "badge badge-info" %>
+    <% if TestPassage.conditions[badge.condition.to_sym][:relate_to] %>
+      <%= TestPassage.conditions[badge.condition.to_sym][:relate_to].find(badge.condition_param).title %>
+    <% else %>
+      <%= badge.condition_param %>
+    <% end %>
+  </td>
+  <td class="text-center">
+    <%= link_to t("show_action"), admin_badge_path(badge), class: "badge badge-info" %>
   </td>
   <td class="text-center">
     <%= link_to t("edit_action"),

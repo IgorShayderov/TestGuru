@@ -26,7 +26,7 @@ class Admin::BadgesController < Admin::BaseController
 
   def update
     if @badge.update(badge_params)
-      redirect_to @badge
+      redirect_to admin_badge_path(@badge)
     else
       render :new
     end
@@ -38,13 +38,35 @@ class Admin::BadgesController < Admin::BaseController
     redirect_to admin_badges_path
   end
 
+  def collection
+    condition_param_options
+  end
+
   private
+
+  def set_badge
+    @badge = Badge.find(params[:id])
+  end
 
   def set_badges
     @badges = Badge.all
   end
 
   def badge_params
-    params.require(:badge).permit(:title, :icon, :condition)
+    params.require(:badge).permit(:title, :icon, :condition, :condition_param)
+  end
+
+  def condition_param_options
+    if params[:condition_id]
+      render json:
+      case params[:condition_id]
+      when 'condition_1'
+        Category.all
+      when 'condition_2'
+        Test.all
+      when 'condition_3'
+        (1..5).to_a
+      end
+    end
   end
 end
