@@ -1,0 +1,37 @@
+<h1 class="text-center"><%= t('.all_badges_header') %></h1>
+
+<%= render 'shared/errors', resource: @badge %>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th class="text-center"><%= t('.icon') %>:</th>
+      <th class="text-center"><%= t('.title') %>:</th>
+      <th class="text-center"><%= t('.condition') %>:</th>
+      <th class="text-center"><%= t('.relate_to') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @badges %>
+  </tbody>
+</table>
+
+<% if @user_badges.count.positive? %>
+
+  <h2 class="text-center"><%= t('.your_badges') %></h2>
+
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th class="text-center"><%= t('.icon') %>:</th>
+        <th class="text-center"><%= t('.title') %>:</th>
+        <th class="text-center"><%= t('.condition') %>:</th>
+        <th class="text-center"><%= t('.relate_to') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "badge", collection: @user_badges, as: :badge %>
+    </tbody>
+  </table>
+
+<% end %>

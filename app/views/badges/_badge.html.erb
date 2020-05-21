@@ -1,0 +1,18 @@
+ <tr>
+  <td class="text-center">
+    <i class="fas fa-<%= badge.icon %> fa-3x"></i>
+  </td>
+  <td class="text-center">
+    <%= badge.title %>
+  </td>
+  <td class="text-center">
+    <%= TestPassage.conditions[badge.condition.to_sym][:description] %>
+  </td>
+  <td class="text-center">
+    <% if TestPassage.conditions[badge.condition.to_sym][:relate_to] %>
+      <%= TestPassage.conditions[badge.condition.to_sym][:relate_to].find(badge.condition_param).title %>
+    <% else %>
+      <%= badge.condition_param %>
+    <% end %>
+  </td>
+</tr>
