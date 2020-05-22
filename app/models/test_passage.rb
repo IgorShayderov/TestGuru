@@ -6,6 +6,7 @@ class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
+  has_many :users_badge, dependent: :destroy
 
   before_validation :before_validation_set_next_question, on: %i[create update]
 
