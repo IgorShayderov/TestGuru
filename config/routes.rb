@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    get ':condition_id/get_collection', to: 'badges#collection'
+    get ':condition/get_collection', to: 'badges#collection'
     resources :badges
 
     resources :tests do

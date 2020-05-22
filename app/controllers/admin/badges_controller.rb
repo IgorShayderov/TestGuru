@@ -57,14 +57,14 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def condition_param_options
-    if params[:condition_id]
+    if params[:condition]
+      condition = params[:condition].to_sym
+
+      relate_to = BadgeService.rules[condition].relate_to
       render json:
-      case params[:condition_id]
-      when 'condition_1'
-        Category.all
-      when 'condition_2'
-        Test.all
-      when 'condition_3'
+      if relate_to
+        relate_to.all
+      else
         (1..5).to_a
       end
     end

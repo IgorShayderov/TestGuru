@@ -13,24 +13,12 @@ class TestPassagesController < ApplicationController
   end
 
   def result
-    Badge.all.pluck(:condition, :condition_param, :id).each do |array|
-      condition_id = array[0]
-      condition_param = array[1]
-      badge_id = array[2]
-      badge = Badge.find(badge_id)
+    gained_badges = BadgeService.new(@test_passage).badges
 
+    if gained_badges.any?
+      current_user.badges << gained_badges
 
-      hz = UsersBadge.where(user: current_user, badge_id: badge_id, test_passage_id: params[:id])
-
-      p "!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-      p "have badge yet?#{hz.count.positive?}"
-
-      next if hz.count.positive?
-      if obtained_badge?(condition_id, condition_param)
-        new_badge = UsersBadge.new(user: current_user, badge_id: badge_id, test_passage_id: params[:id])
-
-        flash[badge.title.to_sym] = "Вы получили новый значок <i class=\'fas fa-#{badge.icon} fa-3x'></i>" if new_badge.save
-      end
+      flash_message(gained_badges)
     end
 
     render :result
@@ -68,12 +56,13 @@ class TestPassagesController < ApplicationController
 
   private
 
-  def obtained_badge?(condition_id, condition_param)
-    TestPassage.conditions[condition_id.to_sym][:exec].call(current_user.id, condition_param)
-  end
+  def flash_message(gained_badges)
+    gained_badges.each do |user_badge|
+      badge_id = user_badge.badge_id
+      badge = Badge.find(badge_id)
 
-  def already_have_badge?(badge_id)
-    UsersBadge.where(user: current_user, badge: Badge.find(badge_id)).any?
+      flash[badge.title.to_sym] = "Вы получили новый значок <i class=\'fas fa-#{badge.icon} fa-3x'></i>"
+    end
   end
 
   def success_message(url)

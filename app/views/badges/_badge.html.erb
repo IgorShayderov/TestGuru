@@ -6,13 +6,9 @@
     <%= badge.title %>
   </td>
   <td class="text-center">
-    <%= TestPassage.conditions[badge.condition.to_sym][:description] %>
+    <%= badge_description(badge) %>
   </td>
   <td class="text-center">
-    <% if TestPassage.conditions[badge.condition.to_sym][:relate_to] %>
-      <%= TestPassage.conditions[badge.condition.to_sym][:relate_to].find(badge.condition_param).title %>
-    <% else %>
-      <%= badge.condition_param %>
-    <% end %>
+    <%= badge_relation(badge) %>
   </td>
 </tr>

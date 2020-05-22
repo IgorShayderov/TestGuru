@@ -17,7 +17,6 @@
 </table>
 
 <% if @user_badges.count.positive? %>
-
   <h2 class="text-center"><%= t('.your_badges') %></h2>
 
   <table class="table table-striped">
@@ -30,8 +29,7 @@
       </tr>
     </thead>
     <tbody>
-      <%= render partial: "badge", collection: @user_badges, as: :badge %>
+      <%= render partial: "badge", collection: @user_badges , as: :badge %>
     </tbody>
   </table>
-
 <% end %>
