@@ -61,7 +61,7 @@ class TestPassagesController < ApplicationController
       badge_id = user_badge.badge_id
       badge = Badge.find(badge_id)
 
-      flash[badge.title.to_sym] = "Вы получили новый значок <i class=\'fas fa-#{badge.icon} fa-3x'></i>"
+      flash[badge.title.to_sym] = "Вы получили новый значок <i class=\'fas fa-#{badge.icon} fa-3x'></i>."
     end
   end
 
