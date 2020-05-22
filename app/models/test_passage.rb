@@ -23,7 +23,7 @@ class TestPassage < ApplicationRecord
   end
 
   def calc_success_percent
-    (( self.correct_questions.to_f / self.test.questions.count) * 100).to_i
+    ((self.correct_questions.to_f / self.test.questions.count) * 100).to_i
   end
 
   def test_passed?
