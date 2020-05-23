@@ -71,6 +71,6 @@ class TestPassage < ApplicationRecord
   end
 
   def end_test
-    self.current_question = test.questions.last
+    self.current_question = nil
   end
 end
