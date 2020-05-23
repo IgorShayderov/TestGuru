@@ -1,9 +1,9 @@
-<h3><%= t('.title') %>: <%= @badge.title %></h3>
+<h3><%= t('badges.index.title') %>: <%= @badge.title %></h3>
 
 <ul>
-  <li><%= t('.icon') %>: <i class="fas fa-<%= @badge.icon %> fa-3x"></i></li>
-  <li><%= t('.condition') %>: <%= badge_description(@badge) %></li>
-  <li><%= t('.relate_to') %>:
+  <li><%= t('badges.index.icon') %>: <i class="fas fa-<%= @badge.icon %> fa-3x"></i></li>
+  <li><%= t('badges.index.condition') %>: <%= badge_description(@badge) %></li>
+  <li><%= t('badges.index.relate_to') %>:
     <%= badge_relation(@badge) %>
   </li>
 </ul>

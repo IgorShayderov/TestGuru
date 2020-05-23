@@ -1,5 +1,4 @@
 ru:
-  badges: "Значки"
   description: "Вопрос о %{title} из TesGuru"
   user_panel: "Пользовательская панель"
   specify_name: "пожалуйста, укажите ваше имя"
@@ -69,6 +68,7 @@ ru:
       login: "Вход"
       registration: "Регистрация"
       welcome: "Привет"
+      badges: "Значки"
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
@@ -107,6 +107,15 @@ ru:
       success: "Gist успешно сохранён!"
       failure: "Во время сохранения gist произошла ошибка"
 
+  badges:
+    index:
+      icon: "Иконка"
+      title: "Название"
+      condition: "Условие"
+      relate_to: "Относится к"
+      your_badges: "Ваши значки"
+      all_badges_header: "Все значки"
+
   admin:
     badges:
       index:
@@ -115,6 +124,8 @@ ru:
         title: "Название"
         condition: "Условие"
         actions: "Действия"
+        new_badge: "Новый значок"
+        relate_to: "Относится к"
       create:
         success: "Значок был успешно создан!"
     gists:
@@ -155,6 +166,7 @@ ru:
         confirmation: "Вы уверены?"
     nav:
       guru: "Гуру"
+      badges: "Значки"
 
   feedback:
     new:

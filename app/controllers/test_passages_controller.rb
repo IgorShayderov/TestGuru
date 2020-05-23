@@ -58,8 +58,7 @@ class TestPassagesController < ApplicationController
 
   def flash_message(gained_badges)
     gained_badges.each do |user_badge|
-      badge_id = user_badge.badge_id
-      badge = Badge.find(badge_id)
+      badge = Badge.find(user_badge.badge_id)
       description = helpers.badge_description(badge).downcase
       message = "Вы получили новый значок <i class=\'fas fa-#{badge.icon} fa-3x'></i> (#{description})"
 
