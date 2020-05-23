@@ -16,13 +16,16 @@
     data: { question_max: @test_passage.test.questions.count } %>
 
     <% if @test_passage.test.timer.positive? %>
-      <span class="timer-header ml-2">Timer:</span> <span class="timer" data-time="<%= @test_passage.test.timer %>">0:00</span>
+      <span class="timer-header ml-2"><%= t('.timer') %>:</span>
+      <span class="timer hide" data-test-passage="<%= @test_passage.id %>">
+        <%= @test_passage.time_left %>
+      </span>
     <% end %>
 </p>
 
 <p class="ml-2"> <%= @test_passage.current_question.body %> </p>
 
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put, class: "ml-2" do |form| %>
+<%= form_with url: test_passage_path(@test_passage), local: true, method: :put, class: "question-form ml-2" do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
       <%= b.check_box id: "answer_ids_#{b.object.id}" %>

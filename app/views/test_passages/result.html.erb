@@ -1,4 +1,4 @@
-<h2><%= t('.header', title: @test_passage.test.title) %></h2>
+<h2 class="ml-2"><%= t('.header', title: @test_passage.test.title) %></h2>
 
 <div class="progress">
   <div class="progress-bar"
@@ -10,13 +10,17 @@
     
 </div>
 
-<div>
+<div class="ml-2">
   <p><%= t('.success', num: @test_passage.calc_success_percent) %></p>
 
   <% if @test_passage.test_passed? %>
     <p class="text-success"><%= t('.test_passed') %></p>
   <% else %>
     <p class="text-danger"><%= t('.test_failed') %></p>
+  <% end %>
+
+  <% if @test_passage.time_is_out? %>
+    <p><%= t('.time_is_out') %></p>
   <% end %>
 
 <%= link_to t('back_action'), tests_path(@test_passage.test) %>
