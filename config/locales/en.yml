@@ -30,7 +30,6 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  badges: "Badges"
   description: "A question about %{title} from TesGuru"
   user_panel: "User panel"
   specify_name: "please, specify your first name"
@@ -93,6 +92,7 @@ en:
       logout: "Logout"
       login: "Login"
       registration: "Regestration"
+      badges: "Badges"
     errors:
       header:
         one: "%{count} error detected"
@@ -127,6 +127,15 @@ en:
       success: "Gist was successfully created!"
       failure: "An error occurred while saving gist"
 
+  badges:
+    index:
+      icon: "Icon"
+      title: "Title"
+      condition: "Condition"
+      relate_to: "Relate to"
+      your_badges: "Your badges"
+      all_badges_header: "All badges"
+
   admin:
     badges:
       index:
@@ -135,6 +144,8 @@ en:
         title: "Title"
         condition: "Condition"
         actions: "Actions"
+        new_badge: "New badge"
+        relate_to: "Relate to"
       create:
         success: "Badge was successfully created!"
     gists:
@@ -175,6 +186,7 @@ en:
         confirmation: "Are you sure?"
     nav:
       guru: "Guru"
+      badges: "Badges"
 
   feedback:
     new:
