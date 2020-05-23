@@ -3,7 +3,7 @@ document.addEventListener('turbolinks:load', function (e) {
 
   if (timer) {
     const questionForm = document.querySelector('.question-form');
-    const avaliableTime = Math.floor(timer.innerHTML);
+    const avaliableTime = Math.floor(timer.dataset.time);
     const testPassageId = timer.dataset.testPassage;
 
     new Promise ((resolve) => {

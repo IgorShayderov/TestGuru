@@ -17,8 +17,8 @@
 
     <% if @test_passage.test.timer.positive? %>
       <span class="timer-header ml-2"><%= t('.timer') %>:</span>
-      <span class="timer hide" data-test-passage="<%= @test_passage.id %>">
-        <%= @test_passage.time_left %>
+      <span class="timer hide" data-test-passage="<%= @test_passage.id %>"
+      data-time="<%= @test_passage.time_left %>">
       </span>
     <% end %>
 </p>
