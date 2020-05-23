@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-class AllTestsByLvlRule < BaseRule
+class AllTestsByLvlRule
+  attr_reader :description, :relate_to
+
   def initialize
     @relate_to = nil
     @description = 'Выдать бэйдж после успешного прохождения всех тестов определённого уровня'

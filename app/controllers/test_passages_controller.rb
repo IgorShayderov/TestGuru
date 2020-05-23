@@ -16,7 +16,7 @@ class TestPassagesController < ApplicationController
     gained_badges = BadgeService.new(@test_passage).badges
 
     if gained_badges.any?
-      current_user.badges << gained_badges
+      current_user.users_badges << gained_badges
 
       flash_message(gained_badges)
     end
@@ -60,7 +60,7 @@ class TestPassagesController < ApplicationController
     gained_badges.each do |user_badge|
       badge_id = user_badge.badge_id
       badge = Badge.find(badge_id)
-      description = helpers.badge_description(badge).downcase!
+      description = helpers.badge_description(badge).downcase
       message = "Вы получили новый значок <i class=\'fas fa-#{badge.icon} fa-3x'></i> (#{description})"
 
       flash[badge.title.to_sym] = message

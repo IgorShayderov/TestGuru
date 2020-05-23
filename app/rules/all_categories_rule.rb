@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-class AllCategoriesRule < BaseRule
+class AllCategoriesRule
+  attr_reader :description, :relate_to
+
   def initialize
     @relate_to = Category
     @description = 'Успешное прохождения всех тестов из категории'

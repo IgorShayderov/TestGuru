@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-class TestFromFirstTimeRule < BaseRule
+class TestFromFirstTimeRule
+  attr_reader :description, :relate_to
+
   def initialize
     @relate_to = Test
     @description = 'Выдать бэйдж после успешного прохождения теста с первой попытки'
