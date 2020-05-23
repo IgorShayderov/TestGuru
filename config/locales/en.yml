@@ -105,19 +105,22 @@ en:
       test_id: "Test id"
       title: "Title"
       level: "Level"
+      timer: "Timer"
     test:
       start: "Start"
 
   test_passages:
     result:
-      header: "Test %{title} was successfully completed."
+      header: "Test %{title} was completed."
       success: "%{num}% of success."
       test_passed: "Test passed"
       test_failed: "Test failed"
+      time_is_out: "Time is out"
     show:
       header: "Passing %{title} test"
       question_of: "question of"
       submit: "Next question"
+      timer: "Timer"
     gist:
       success: "Gist was successfully created!"
       failure: "An error occurred while saving gist"
@@ -131,6 +134,11 @@ en:
         submit: "Accept"
       test:
         confirmation: "Are you sure?"
+        no_timer: "No"
+        timer:
+          one: "%{count} minute"
+          many: "%{count} minutes"
+          other: "%{count} minutes"
       index:
         gists_title: "Gists created by users"
         new_test: "New test"

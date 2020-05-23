@@ -25,3 +25,4 @@ require('utilities/sorting');
 require('utilities/password_verification');
 require('utilities/form_inline')
 require('utilities/progress_bar')
+require('utilities/timer')

@@ -4,6 +4,13 @@
     <li><%= t('tests.index.title') %>: <%= @test.title %></li>
     <li><%= t('.category') %>: <%= @test.category.title %></li>
     <li><%= t('tests.index.level') %>: <%= @test.level %></li>
+    <li><%= t('tests.index.timer') %>:
+      <% if @test.timer.positive? %>
+        <%= t('admin.tests.test.timer',count: @test.timer) %>
+      <% else %>
+        <%= t("admin.tests.test.no_timer") %>
+      <% end %>
+    </li>
 </ul>
 
 <table class="table table-striped">

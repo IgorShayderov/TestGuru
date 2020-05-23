@@ -5,6 +5,13 @@
   </td>
   <td><%= test_level(test) %></td>
   <td class="text-center"><%= test.questions.count %></td>
+  <td class="text-center">
+    <% if test.timer.positive? %>
+      <%= t('.timer',count: test.timer) %>
+    <% else %>
+      <%= t(".no_timer") %>
+    <% end %>
+  </td>
   <td class="text-center"><%= link_to t("show_action"), admin_test_path(test), class: "badge badge-info" %></td>
   <td class="text-center">
     <%= link_to t("edit_action"),

@@ -15,6 +15,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    end_test if time_is_out?
     save!
   end
 
@@ -23,11 +24,19 @@ class TestPassage < ApplicationRecord
   end
 
   def calc_success_percent
-    (( self.correct_questions.to_f / self.test.questions.count) * 100).to_i
+    ((self.correct_questions.to_f / self.test.questions.count) * 100).to_i
   end
 
   def test_passed?
     calc_success_percent >= PERCENT_TO_PASS
+  end
+
+  def time_left
+    timer - time_passed
+  end
+
+  def time_is_out?
+    !time_left.positive?
   end
 
   private
@@ -51,5 +60,17 @@ class TestPassage < ApplicationRecord
 
   def correct_answers
     current_question.answers.correct
+  end
+
+  def timer
+    test.timer * 60
+  end
+
+  def time_passed
+    Time.zone.now - created_at
+  end
+
+  def end_test
+    self.current_question = nil
   end
 end
