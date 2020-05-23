@@ -60,7 +60,7 @@ class Admin::BadgesController < Admin::BaseController
     if params[:condition]
       condition = params[:condition].to_sym
 
-      relate_to = BadgeService.rules[condition].relate_to
+      relate_to = BadgeService::RULES[condition].relate_to
       render json:
       if relate_to
         relate_to.all

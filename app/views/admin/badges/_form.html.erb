@@ -18,7 +18,7 @@
   <p class="ml-2"><%= t('.conditions') %>:</p>
 
   <%= form.select :condition, {}, {}, {class: "form__item ml-2"} do %>
-    <% BadgeService.rules.each do |rule_key, rule| %>
+    <% BadgeService::RULES.each do |rule_key, rule| %>
       <%= content_tag :option, rule.description, value: rule_key %>
     <% end %>
   <% end %>

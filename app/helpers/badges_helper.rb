@@ -10,11 +10,11 @@ module BadgesHelper
   end
 
   def badge_description(badge)
-    BadgeService.rules[badge.condition.to_sym].description
+    BadgeService::RULES[badge.condition.to_sym].description
   end
 
   def badge_relation(badge)
-    relate_to = BadgeService.rules[badge.condition.to_sym].relate_to
+    relate_to = BadgeService::RULES[badge.condition.to_sym].relate_to
     if relate_to
       relate_to.find(badge.condition_param).title
     else

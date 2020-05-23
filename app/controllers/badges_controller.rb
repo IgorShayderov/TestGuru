@@ -9,7 +9,7 @@ class BadgesController < ApplicationController
   private
 
   def user_badges
-    @user_badges = Badge.users_badges(current_user)
+    @user_badges = current_user.badges
   end
 
   def set_badges

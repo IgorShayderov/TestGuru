@@ -115,6 +115,8 @@ ru:
         title: "Название"
         condition: "Условие"
         actions: "Действия"
+      create:
+        success: "Значок был успешно создан!"
     gists:
       gist:
         url: "Ссылка"
