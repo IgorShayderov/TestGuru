@@ -18,8 +18,8 @@
   <p class="ml-2"><%= t('badges.index.condition') %>:</p>
 
   <%= form.select :condition, {}, {}, {class: "form__item ml-2"} do %>
-    <% BadgeService::RULES.each do |rule_key, rule| %>
-      <%= content_tag :option, rule.description, value: rule_key %>
+    <% BadgeService::RULES.each do |rule_key| %>
+      <%= content_tag :option, t(rule_key), value: rule_key %>
     <% end %>
   <% end %>
   <br>

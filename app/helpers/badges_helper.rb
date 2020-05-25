@@ -9,10 +9,6 @@ module BadgesHelper
     "#{badge_part} #{I18n.t('activerecord.models.badge').downcase}"
   end
 
-  def badge_description(badge)
-    BadgeService::RULES[badge.condition.to_sym].description
-  end
-
   def badge_relation(badge)
     relate_to = BadgeService::RULES[badge.condition.to_sym].relate_to
 

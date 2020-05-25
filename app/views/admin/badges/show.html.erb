@@ -2,7 +2,7 @@
 
 <ul>
   <li><%= t('badges.index.icon') %>: <i class="fas fa-<%= @badge.icon %> fa-3x"></i></li>
-  <li><%= t('badges.index.condition') %>: <%= badge_description(@badge) %></li>
+  <li><%= t('badges.index.condition') %>: <%= t(@badge.condition) %></li>
   <li><%= t('badges.index.relate_to') %>:
     <%= badge_relation(@badge) %>
   </li>
