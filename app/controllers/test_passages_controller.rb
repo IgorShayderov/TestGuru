@@ -16,7 +16,7 @@ class TestPassagesController < ApplicationController
     gained_badges = BadgeService.new(@test_passage).badges
 
     if gained_badges.any?
-      current_user.users_badges << gained_badges
+      gained_badges.each { |badge| current_user.users_badges.create(badge: badge, test_passage: @test_passage) }
 
       flash_message(gained_badges)
     end
@@ -28,6 +28,7 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
+      @test_passage.update(success: true) if @test_passage.test_passed?
       # TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
@@ -57,9 +58,8 @@ class TestPassagesController < ApplicationController
   private
 
   def flash_message(gained_badges)
-    gained_badges.each do |user_badge|
-      badge = Badge.find(user_badge.badge_id)
-      description = helpers.badge_description(badge).downcase
+    gained_badges.each do |badge|
+      description = I18n.t("rules.#{badge.condition}").downcase
       message = "Вы получили новый значок <i class=\'fas fa-#{badge.icon} fa-3x'></i> (#{description})"
 
       flash[badge.title.to_sym] = message

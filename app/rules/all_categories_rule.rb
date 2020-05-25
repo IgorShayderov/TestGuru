@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-class AllCategoriesRule
-  attr_reader :description, :relate_to
-
+class AllCategoriesRule < BaseRule
   def initialize
     @relate_to = Category
-    @description = 'Успешное прохождения всех тестов из категории'
   end
 
-  def passed?(category_id, user_id)
+  def passed?(badge, test_passage)
+    return if already_have_badge?(badge, test_passage.user_id)
+    return if badge_gived?(badge, test_passage)
+
+    category_id = badge.condition_param
     all_category_tests_ids = Test.where(category: category_id).pluck(:id)
-    all_user_tests_ids = TestPassage.where(user_id: user_id).pluck(:test_id)
-    (all_category_tests_ids - all_user_tests_ids).empty?
+    (all_category_tests_ids - successful_test_passages(test_passage)).empty?
   end
 end

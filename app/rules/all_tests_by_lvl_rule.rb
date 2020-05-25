@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-class AllTestsByLvlRule
-  attr_reader :description, :relate_to
-
+class AllTestsByLvlRule < BaseRule
   def initialize
     @relate_to = nil
-    @description = 'Выдать бэйдж после успешного прохождения всех тестов определённого уровня'
   end
 
-  def passed?(level, user_id)
+  def passed?(badge, test_passage)
+    return if already_have_badge?(badge, test_passage.user_id)
+    return if badge_gived?(badge, test_passage)
+
+    level = badge.condition_param
     all_tests_of_lvl_ids = Test.where(level: level).pluck(:id)
-    all_user_tests_ids = TestPassage.where(user_id: user_id).pluck(:id)
-    (all_tests_of_lvl_ids - all_user_tests_ids).empty?
+    (all_tests_of_lvl_ids - successful_test_passages(test_passage)).empty?
   end
 end
