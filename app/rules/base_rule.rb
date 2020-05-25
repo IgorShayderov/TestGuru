@@ -10,7 +10,7 @@ class BaseRule
   end
 
   def already_have_badge?(badge, user_id)
-    UserBadges.where(badge: badge, user_id: user_id).count.positive?
+    UsersBadge.where(badge: badge, user_id: user_id).count.positive?
   end
 
   def successful_test_passages(test_passage)

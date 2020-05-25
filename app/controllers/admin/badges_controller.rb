@@ -65,7 +65,7 @@ class Admin::BadgesController < Admin::BaseController
       if relate_to
         relate_to.all
       else
-        (1..5).to_a
+        (0..5).to_a
       end
     end
   end
