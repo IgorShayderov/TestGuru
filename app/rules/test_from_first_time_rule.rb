@@ -7,9 +7,6 @@ class TestFromFirstTimeRule < BaseRule
 
   def passed?(badge, test_passage)
     return if badge_gived?(badge, test_passage)
-    p "!!!!!!!!!"
-    p test_passage
-    p "!!!!!!!!!!"
 
     test_id = badge.condition_param
     seached_test = TestPassage.where(id: test_passage.id, user_id: test_passage.user_id, test_id: test_id, success: true)
