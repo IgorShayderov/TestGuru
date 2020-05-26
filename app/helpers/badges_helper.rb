@@ -12,10 +12,10 @@ module BadgesHelper
   def badge_relation(badge)
     relate_to = BadgeService::RULES[badge.condition.to_sym].relate_to
 
-    if relate_to
-      relate_to.find(badge.condition_param).title
-    else
+    if relate_to.class == Array
       badge.condition_param
+    else
+      relate_to.find(badge.condition_param).title
     end
   end
 end

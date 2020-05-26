@@ -2,7 +2,7 @@
 
 class AllTestsByLvlRule < BaseRule
   def initialize
-    @relate_to = nil
+    @relate_to = (0..5).to_a
   end
 
   def passed?(badge, test_passage)
