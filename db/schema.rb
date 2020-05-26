@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_05_24_181735) do
+=======
+ActiveRecord::Schema.define(version: 2020_05_22_182635) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +82,7 @@ ActiveRecord::Schema.define(version: 2020_05_24_181735) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id"
     t.bigint "user_id"
+    t.integer "timer", default: 0
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["level", "title"], name: "index_tests_on_level_and_title", unique: true
     t.index ["user_id"], name: "index_tests_on_user_id"

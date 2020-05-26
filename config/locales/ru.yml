@@ -95,19 +95,22 @@ ru:
       level: "Уровень"
       questions: "Вопросы"
       actions: "Действия"
+      timer: "Таймер"
     test:
       start: "Начать"
 
   test_passages:
     result:
-      header: "Тест %{title} успешно завершен!"
+      header: "Тест %{title} завершен!"
       success: "%{num}% успешности."
       test_passed: "Тест пройден"
       test_failed: "Тест провален"
+      time_is_out: "Время кончилось"
     show:
       header: "Прохождение теста %{title}"
       question_of: "вопрос из"
       submit: "Следующий вопрос"
+      timer: "Таймер"
     gist:
       success: "Gist успешно сохранён!"
       failure: "Во время сохранения gist произошла ошибка"
@@ -141,6 +144,11 @@ ru:
         submit: "Принять"
       test:
         confirmation: "Вы уверены?"
+        no_timer: "Нет"
+        timer:
+          one: "%{count} минута"
+          many: "%{count} минут"
+          other: "%{count} минуты"
       index:
         gists_title: "Созданные пользователями Gists"
         new_test: "Новый тест"
