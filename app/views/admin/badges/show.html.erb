@@ -1,0 +1,11 @@
+<h3><%= t('badges.index.title') %>: <%= @badge.title %></h3>
+
+<ul>
+  <li><%= t('badges.index.icon') %>: <i class="fas fa-<%= @badge.icon %> fa-3x"></i></li>
+  <li><%= t('badges.index.condition') %>: <%= t(@badge.condition) %></li>
+  <li><%= t('badges.index.relate_to') %>:
+    <%= badge_relation(@badge) %>
+  </li>
+</ul>
+
+<%= link_to t('back_action'), admin_badges_path, class: "btn btn-secondary" %>

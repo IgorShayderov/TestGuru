@@ -1,0 +1,20 @@
+// Place all the styles related to the badges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.icons-select {
+  
+}
+
+.icons-select__item {
+  margin: 5px;
+  cursor: pointer;
+  pointer-events: stroke;
+}
+
+.icons-select__item:hover {
+  padding: 3px;
+}
+
+.icons-select__item_selected {
+  border: 3px solid red;
+}

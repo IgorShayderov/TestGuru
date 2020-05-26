@@ -6,6 +6,7 @@ ru:
       answer: "Ответ"
       user: "Пользователь"
       feedback: "Обратная связь"
+      badge: "Значок"
 
     attributes:
       user:
@@ -16,6 +17,10 @@ ru:
         text: "Текст"
       test:
         title: "Название"
+      badge:
+        title: "Название"
+        path: "Путь"
+        condition: "Условие"
 
     errors:
       messages:

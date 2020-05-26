@@ -2,15 +2,19 @@
   "name": "TestGuru",
   "private": true,
   "dependencies": {
-    "@rails/actioncable": "^6.0.0",
-    "@rails/activestorage": "^6.0.0",
-    "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "4.2.2",
-    "turbolinks": "^5.2.0",
-    "jquery": "^3.5.1"
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@rails/actioncable": "^6.0.3-1",
+    "@rails/activestorage": "^6.0.3-1",
+    "@rails/ujs": "^6.0.3-1",
+    "@rails/webpacker": "^5.1.1",
+    "jquery": "^3.5.1",
+    "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "yarn-upgrade-all": "^0.5.2"
   }
 }

@@ -1,0 +1,29 @@
+<%= form_with model: [:admin, @badge], local: true, class: "badges-form" do |form| %>
+
+  <%= render 'shared/errors', resource: @badge  %>
+
+  <%= form.label :title, class: "form__item ml-2" %>
+  <%= form.text_field :title, id: :badge_title, class: "ml-2" %>
+
+  <%= form.label :icon, class: "form__item ml-2" %>
+  <%= form.text_field :icon, id: :badge_icon, class: "hide" %>
+
+  <div class="icons-select ml-2">
+    <i class="fas fa-medal fa-3x icons-select__item"></i>
+    <i class="fas fa-brain fa-3x icons-select__item"></i>
+    <i class="fas fa-user-graduate fa-3x icons-select__item"></i>
+    <i class="fas fa-award fa-3x icons-select__item"></i>
+  </div>
+
+  <p class="ml-2"><%= t('badges.index.condition') %>:</p>
+
+  <%= form.select :condition, {}, {}, {class: "form__item ml-2"} do %>
+    <% BadgeService::RULES.each do |rule_key, rule| %>
+      <%= content_tag :option, t("rules.#{rule_key}"), value: rule_key %>
+    <% end %>
+  <% end %>
+  <br>
+  <%= form.collection_select :condition_param, Category.all, :id, :title,{ prompt: true }, { class: "form__item ml-2" } %>
+  <br>
+  <%= form.submit class: "btn btn-primary" %>
+<% end %>

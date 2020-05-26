@@ -1,0 +1,14 @@
+ <tr>
+  <td class="text-center">
+    <i class="fas fa-<%= badge.icon %> fa-3x"></i>
+  </td>
+  <td class="text-center">
+    <%= badge.title %>
+  </td>
+  <td class="text-center">
+    <%= t("rules.#{badge.condition}") %>
+  </td>
+  <td class="text-center">
+    <%= badge_relation(badge) %>
+  </td>
+</tr>

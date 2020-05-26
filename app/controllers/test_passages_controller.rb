@@ -12,7 +12,17 @@ class TestPassagesController < ApplicationController
     end
   end
 
-  def result; end
+  def result
+    gained_badges = BadgeService.new(@test_passage).badges
+
+    if gained_badges.any?
+      gained_badges.each { |badge| current_user.users_badges.create(badge: badge, test_passage: @test_passage) }
+
+      flash_message(gained_badges)
+    end
+
+    render :result
+  end
 
   def update
     @test_passage.accept!(params[:answer_ids])
@@ -45,6 +55,15 @@ class TestPassagesController < ApplicationController
   end
 
   private
+
+  def flash_message(gained_badges)
+    gained_badges.each do |badge|
+      description = I18n.t("rules.#{badge.condition}").downcase
+      message = "Вы получили новый значок <i class=\'fas fa-#{badge.icon} fa-3x'></i> (#{description})"
+
+      flash[badge.title.to_sym] = message
+    end
+  end
 
   def success_message(url)
     view_context.link_to(t('.success'), url)

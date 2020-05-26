@@ -4,11 +4,11 @@
 #
 # To use the locales, use `I18n.t`:
 #
-#     I18n.t 'hello'
+#     I18n.t "hello"
 #
 # In views, this is aliased to just `t`:
 #
-#     <%= t('hello') %>
+#     <%= t("hello") %>
 #
 # To use a different locale, set it with `I18n.locale`:
 #
@@ -24,7 +24,7 @@
 # Instead, surround them with single quotes.
 #
 # en:
-#   'true': 'foo'
+#   "true": "foo"
 #
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
@@ -46,8 +46,15 @@ en:
   question: "question"
   answer: "answer"
   correct: "correct"
-  not_authorized: 'You are not authorized to view this page.'
+  not_authorized: "You are not authorized to view this page."
   say_hello: "Hello, %{name}"
+  create_new: "Create new"
+  edit: "Edit"
+
+  rules:
+    pass_from_first_time: "Give badge after passing test from first time"
+    pass_all_tests_by_lvl: "Give badge after passing all test of ceratin level"
+    pass_all_categories: "Successful completion of all category tests"
 
   easy: "easy"
   elementary: "elementary"
@@ -64,6 +71,8 @@ en:
       answer:
         create: "Create answer"
         update: "Update answer"
+      badge:
+        icon: "Icon"
       feedback:
         create: "Send"
       test:
@@ -88,6 +97,7 @@ en:
       logout: "Logout"
       login: "Login"
       registration: "Regestration"
+      badges: "Badges"
     errors:
       header:
         one: "%{count} error detected"
@@ -125,7 +135,27 @@ en:
       success: "Gist was successfully created!"
       failure: "An error occurred while saving gist"
 
+  badges:
+    index:
+      icon: "Icon"
+      title: "Title"
+      condition: "Condition"
+      relate_to: "Relate to"
+      your_badges: "Your badges"
+      all_badges_header: "All badges"
+
   admin:
+    badges:
+      index:
+        header: "Badges"
+        icon: "Icon"
+        title: "Title"
+        condition: "Condition"
+        actions: "Actions"
+        new_badge: "New badge"
+        relate_to: "Relate to"
+      create:
+        success: "Badge was successfully created!"
     gists:
       gist:
         url: "Url"
@@ -169,6 +199,7 @@ en:
         confirmation: "Are you sure?"
     nav:
       guru: "Guru"
+      badges: "Badges"
 
   feedback:
     new:

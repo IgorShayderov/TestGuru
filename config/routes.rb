@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
   root 'tests#index'
 
-  devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }, controllers: { sessions: 'users/sessions' }
+  devise_for :users,
+             path: :gurus,
+             path_names: { sign_in: :login, sign_out: :logout },
+             controllers: { sessions: 'users/sessions' }
 
   resources :tests, only: :index do
     post :start, on: :member
   end
 
   resources :feedback, only: %i[new create]
+
+  resources :badges, only: %i[index]
 
   resources :test_passages, only: %i[show update] do
     member do
@@ -17,6 +22,9 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    get ':condition/get_collection', to: 'badges#collection'
+    resources :badges
+
     resources :tests do
       patch :update_inline, on: :member
 

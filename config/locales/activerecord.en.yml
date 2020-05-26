@@ -6,6 +6,7 @@ en:
       answer: "Answer"
       user: "User"
       feedback: "Feedback"
+      badge: "Badge"
 
     attributes:
       user:
@@ -16,8 +17,11 @@ en:
         text: "Text"
       test:
         title: "Title"
+      badge:
+        title: "Title"
+        path: "Path"
+        condition: "Condition"
 
     errors:
       messages:
         blank: "can't be blank"
-

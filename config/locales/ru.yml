@@ -15,8 +15,15 @@ ru:
   question: "вопрос"
   answer: "ответ"
   correct: "правилен ли"
-  not_authorized: 'У вас нет прав доступа к этой странице.'
+  not_authorized: "У вас нет прав доступа к этой странице."
   say_hello: "Привет, %{name}"
+  create_new: "Создать новый"
+  edit: "Редактировать"
+
+  rules:
+    pass_from_first_time: "Выдать бэйдж после успешного прохождения теста с первой попытки"
+    pass_all_tests_by_lvl: "Выдать бэйдж после успешного прохождения всех тестов определённого уровня"
+    pass_all_categories: "Успешное прохождения всех тестов из категории"
 
   easy: "лёгкий"
   elementary: "элементарный"
@@ -51,6 +58,8 @@ ru:
       answer:
         body: "Содержимое"
         correct: "Правилен ли"
+      badge:
+        icon: "Иконка"
       question:
         body: "Содержимое"
       test:
@@ -64,6 +73,7 @@ ru:
       login: "Вход"
       registration: "Регистрация"
       welcome: "Привет"
+      badges: "Значки"
     errors:
       header:
         few: "Обнаружено %{count} ошибки"
@@ -105,7 +115,27 @@ ru:
       success: "Gist успешно сохранён!"
       failure: "Во время сохранения gist произошла ошибка"
 
+  badges:
+    index:
+      icon: "Иконка"
+      title: "Название"
+      condition: "Условие"
+      relate_to: "Относится к"
+      your_badges: "Ваши значки"
+      all_badges_header: "Все значки"
+
   admin:
+    badges:
+      index:
+        header: "Значки"
+        icon: "Иконка"
+        title: "Название"
+        condition: "Условие"
+        actions: "Действия"
+        new_badge: "Новый значок"
+        relate_to: "Относится к"
+      create:
+        success: "Значок был успешно создан!"
     gists:
       gist:
         url: "Ссылка"
@@ -149,6 +179,7 @@ ru:
         confirmation: "Вы уверены?"
     nav:
       guru: "Гуру"
+      badges: "Значки"
 
   feedback:
     new:
