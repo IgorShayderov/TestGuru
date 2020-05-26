@@ -25,8 +25,5 @@ require('utilities/sorting');
 require('utilities/password_verification');
 require('utilities/form_inline')
 require('utilities/progress_bar')
-<<<<<<< HEAD
 require('utilities/badges_form')
-=======
 require('utilities/timer')
->>>>>>> master
